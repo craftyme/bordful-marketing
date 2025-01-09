@@ -1,9 +1,14 @@
 import * as React from "react";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "./ui/sheet";
-import { Button } from "./ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { navConfig } from "@/lib/constants";
-import { CustomLink } from "./ui/link";
+import { CustomLink } from "@/components/ui/link";
 import { SocialIcons } from "./social-icons";
 import { ActionButtons } from "./action-buttons";
 
