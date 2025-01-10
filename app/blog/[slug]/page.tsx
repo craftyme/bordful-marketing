@@ -8,18 +8,23 @@ import remarkGfm from "remark-gfm";
 import { CustomLink } from "@/components/ui/link";
 import { Badge } from "@/components/ui/badge";
 
-interface PageProps {
-  params: { slug: string };
-}
+type BlogPostParams = {
+  slug: string;
+};
 
-export async function generateStaticParams() {
+type BlogPostProps = {
+  params: BlogPostParams;
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateStaticParams(): Promise<BlogPostParams[]> {
   const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: BlogPostProps) {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
 
@@ -29,7 +34,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function BlogPost({ params }: PageProps) {
+export default async function BlogPost({ params }: BlogPostProps) {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
