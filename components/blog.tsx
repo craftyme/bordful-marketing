@@ -10,21 +10,21 @@ const BLOG_POSTS = {
     description:
       "Learn how Bordful makes it easy to launch your own job board without coding knowledge using Airtable as a backend.",
     date: "January 10, 2025",
-    href: "#blog/introducing-bordful",
+    href: "/blog/introducing-bordful",
   },
   GUIDE: {
     title: "How to Launch a Niche Job Board in 10 Minutes",
     description:
       "Step-by-step guide to creating a specialized job board for your industry, technology, or location using Bordful.",
     date: "January 10, 2025",
-    href: "#blog/launch-niche-job-board",
+    href: "/blog/launch-niche-job-board",
   },
   TIPS: {
     title: "5 Ways to Promote Your Job Board",
     description:
       "Proven strategies to attract employers and job seekers to your newly launched job board platform.",
     date: "January 10, 2025",
-    href: "#blog/promote-job-board",
+    href: "/blog/promote-job-board",
   },
 } as const;
 
@@ -35,7 +35,7 @@ interface BlogPost {
   href: string;
 }
 
-const BlogCard = React.memo(function BlogCard({
+export const BlogCard = React.memo(function BlogCard({
   title,
   description,
   date,
@@ -44,16 +44,14 @@ const BlogCard = React.memo(function BlogCard({
   return (
     <CustomLink
       href={href}
-      className="group block rounded-lg border bg-background/50 p-5 backdrop-blur-sm transition-colors hover:bg-background/80"
+      className="block space-y-4 rounded-lg border bg-background/50 p-6 backdrop-blur-sm transition-colors hover:bg-background/80"
     >
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex-1">
-          <time className="mb-2 block text-xs text-muted-foreground">
-            {date}
-          </time>
-          <h3 className="mb-2 text-sm font-medium leading-tight">{title}</h3>
-          <p className="text-sm text-muted-foreground">{description}</p>
-        </div>
+      <time className="text-sm text-muted-foreground">{date}</time>
+      <div>
+        <h3 className="mb-2 text-xl font-medium tracking-tight">{title}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {description}
+        </p>
       </div>
     </CustomLink>
   );
@@ -69,7 +67,7 @@ export function Blog() {
             description="Stay up to date with the latest features, guides, and tips for building successful job boards with Bordful."
           />
           <div className="mt-8">
-            <CustomLink href="#blog" variant="button">
+            <CustomLink href="/blog" variant="button">
               Read More Posts
             </CustomLink>
           </div>
