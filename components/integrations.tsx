@@ -77,6 +77,15 @@ const IntegrationsHeader = React.memo(function IntegrationsHeader() {
         Connect with your favorite tools and services. More integrations are
         added regularly based on community feedback.
       </p>
+      <div className="mt-8 text-center">
+        <CustomLink
+          href="mailto:support@bordful.com?subject=Integration Request"
+          variant="button"
+          external
+        >
+          Request Integration
+        </CustomLink>
+      </div>
     </>
   );
 });
@@ -220,16 +229,6 @@ export function Integrations() {
           {integrations.map((integration) => (
             <IntegrationCard key={integration.name} {...integration} />
           ))}
-        </div>
-        <div className="mt-12 text-center">
-          <CustomLink
-            href="mailto:support@bordful.com?subject=Integration Request"
-            variant="button"
-            className="h-10 px-6 text-sm"
-            external
-          >
-            Request Feature
-          </CustomLink>
         </div>
       </Container>
     </Section>
