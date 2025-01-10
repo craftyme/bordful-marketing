@@ -7,6 +7,7 @@ import { Integrations } from "@/components/integrations";
 import { UseCases } from "@/components/use-cases";
 import { Showcase } from "@/components/showcase";
 import { Documentation } from "@/components/documentation";
+import { Blog } from "@/components/blog";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Integrations />
       <Showcase />
       <Documentation />
+      <Blog />
       <Pricing />
     </div>
   );
