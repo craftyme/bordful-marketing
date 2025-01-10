@@ -47,8 +47,8 @@ const footerSections: FooterSection[] = [
   {
     title: "Legal",
     links: [
-      { href: "#privacy", label: "Privacy" },
-      { href: "#terms", label: "Terms" },
+      { href: "/privacy", label: "Privacy" },
+      { href: "/terms", label: "Terms" },
     ],
   },
 ];

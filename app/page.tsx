@@ -8,6 +8,7 @@ import { UseCases } from "@/components/use-cases";
 import { Showcase } from "@/components/showcase";
 import { Documentation } from "@/components/documentation";
 import { Blog } from "@/components/blog";
+import { FAQ } from "@/components/faq";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Documentation />
       <Blog />
       <Pricing />
+      <FAQ />
     </div>
   );
 }
