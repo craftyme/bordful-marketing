@@ -43,7 +43,7 @@ export function Features() {
         <h2 className="text-center text-2xl font-medium tracking-tight sm:text-3xl">
           Everything You Need
         </h2>
-        <p className="mx-auto mt-4 max-w-[600px] text-center text-sm text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-[600px] text-center text-sm text-muted-foreground text-balance">
           Built with modern technologies and best practices, {siteConfig.name}{" "}
           gives you all the features you need to run a successful job board.
         </p>

@@ -144,9 +144,9 @@ const PricingHeader = React.memo(function PricingHeader() {
       <h2 className="text-2xl font-medium tracking-tight sm:text-3xl">
         Pricing
       </h2>
-      <p className="mx-auto mt-3 max-w-[600px] text-sm text-muted-foreground">
+      <p className="mx-auto mt-3 max-w-[600px] text-sm text-muted-foreground text-balance">
         Choose between our open source version or premium options with
-        additional features and support
+        additional features and support.
       </p>
     </div>
   );
@@ -162,8 +162,8 @@ export function Pricing() {
             <PricingCard key={plan.name} {...plan} />
           ))}
         </div>
-        <div className="mt-8 text-center text-sm text-muted-foreground">
-          <p>All payments are processed & secured by Stripe</p>
+        <div className="mt-8 text-center text-xs text-muted-foreground">
+          <p>All payments are processed & secured by Stripe.</p>
           <p className="mt-1">Price in USD. VAT may apply.</p>
         </div>
       </Container>

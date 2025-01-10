@@ -125,7 +125,7 @@ export function TechStack() {
         <h2 className="text-center text-2xl font-medium tracking-tight sm:text-3xl">
           Built with Modern Stack
         </h2>
-        <p className="mx-auto mt-4 max-w-[600px] text-center text-sm text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-[600px] text-center text-sm text-muted-foreground text-balance">
           Powered by the latest technologies and tools to ensure scalability,
           performance, and developer experience. Start for free.
         </p>

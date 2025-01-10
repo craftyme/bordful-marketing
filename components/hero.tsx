@@ -11,7 +11,7 @@ const HeroContent = React.memo(function HeroContent() {
         <span className="hidden sm:inline">in Minutes</span>
         <span className="sm:hidden">in Minutes</span>
       </h1>
-      <p className="mx-auto mt-3 max-w-[600px] text-base text-muted-foreground">
+      <p className="mx-auto mt-3 max-w-[600px] text-base text-muted-foreground text-balance">
         Open source job board starter template built with Next.js. Clone,
         customize and deploy your own job board in minutes.
       </p>
