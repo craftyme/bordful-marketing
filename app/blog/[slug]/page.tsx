@@ -8,11 +8,12 @@ import remarkGfm from "remark-gfm";
 import { CustomLink } from "@/components/ui/link";
 import { Badge } from "@/components/ui/badge";
 
-interface Props {
+type Props = {
   params: {
     slug: string;
   };
-}
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
