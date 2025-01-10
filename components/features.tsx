@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Section } from "./ui/section";
 import { Container } from "./ui/container";
 import { siteConfig } from "@/lib/constants";
@@ -47,9 +48,9 @@ export function Features() {
           gives you all the features you need to run a successful job board.
         </p>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <div
-              key={index}
+              key={feature.title}
               className="rounded-lg border bg-background/50 p-5 backdrop-blur-sm transition-colors hover:bg-background/80"
             >
               <h3 className="mb-1.5 text-sm font-medium">{feature.title}</h3>
