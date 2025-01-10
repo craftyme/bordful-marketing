@@ -2,7 +2,6 @@ import * as React from "react";
 import { Section } from "./ui/section";
 import { Container } from "./ui/container";
 import { CustomLink } from "./ui/link";
-import { siteConfig } from "@/lib/constants";
 
 const HeroContent = React.memo(function HeroContent() {
   return (
@@ -13,24 +12,25 @@ const HeroContent = React.memo(function HeroContent() {
         <span className="sm:hidden">in Minutes</span>
       </h1>
       <p className="mx-auto mt-3 max-w-[600px] text-base text-muted-foreground">
-        {siteConfig.description}. Start accepting job postings and connecting
-        talent with opportunities today.
+        Open source job board starter template built with Next.js. Clone,
+        customize and deploy your own job board in minutes.
       </p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
         <CustomLink
-          href="#"
+          href="https://github.com/tomaslau/bordful"
           variant="primary"
           className="h-10 px-6 text-sm"
-          aria-label="Get started with Bordful"
+          external
+          aria-label="Clone Bordful on GitHub"
         >
-          Get Started
+          Clone Now
         </CustomLink>
         <CustomLink
-          href={siteConfig.links.demo}
+          href="https://demo.bordful.com"
           variant="button"
           className="h-10 px-6 text-sm"
           external
-          aria-label="View live demo of Bordful"
+          aria-label="View Live Demo"
         >
           Live Demo
         </CustomLink>

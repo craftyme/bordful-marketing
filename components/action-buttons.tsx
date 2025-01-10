@@ -7,8 +7,8 @@ export function ActionButtons() {
       <CustomLink href={siteConfig.links.demo} variant="button" external>
         Live Demo
       </CustomLink>
-      <CustomLink href="#" variant="primary">
-        Get Started
+      <CustomLink href="https://github.com/tomaslau/bordful" variant="primary">
+        Clone Now
       </CustomLink>
     </div>
   );
