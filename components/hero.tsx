@@ -11,11 +11,11 @@ export function Hero() {
           Launch Your Job Board <br className="hidden sm:inline" />
           in Minutes
         </h1>
-        <p className="mx-auto mt-4 max-w-[600px] text-base text-muted-foreground">
+        <p className="mx-auto mt-3 max-w-[600px] text-base text-muted-foreground">
           {siteConfig.description}. Start accepting job postings and connecting
           talent with opportunities today.
         </p>
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <CustomLink href="#" variant="primary" className="h-9 px-4 text-sm">
             Get Started
           </CustomLink>

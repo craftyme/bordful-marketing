@@ -8,8 +8,8 @@ const sectionVariants = cva("", {
       secondary: "bg-secondary/50 backdrop-blur-sm",
     },
     padding: {
-      default: "py-16",
-      hero: "pt-32 pb-16",
+      default: "py-20",
+      hero: "pt-40 pb-12",
     },
   },
   defaultVariants: {
