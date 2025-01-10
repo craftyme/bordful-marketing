@@ -5,6 +5,7 @@ import { TechStack } from "@/components/tech-stack";
 import { Pricing } from "@/components/pricing";
 import { Integrations } from "@/components/integrations";
 import { UseCases } from "@/components/use-cases";
+import { Showcase } from "@/components/showcase";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Features />
       <UseCases />
       <Integrations />
+      <Showcase />
       <Pricing />
     </div>
   );
