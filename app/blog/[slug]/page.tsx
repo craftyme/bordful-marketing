@@ -7,6 +7,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { CustomLink } from "@/components/ui/link";
 import { Badge } from "@/components/ui/badge";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -19,7 +20,7 @@ export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}) {
+}): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
 
@@ -29,11 +30,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
