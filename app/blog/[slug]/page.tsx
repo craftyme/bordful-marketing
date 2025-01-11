@@ -9,7 +9,9 @@ import { CustomLink } from "@/components/ui/link";
 import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 
-export async function generateStaticParams() {
+type Params = { slug: string };
+
+export async function generateStaticParams(): Promise<Params[]> {
   const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
@@ -19,9 +21,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<Params>;
 }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const resolvedParams = await params;
+  const post = getPostBySlug(resolvedParams.slug);
   if (!post) return {};
 
   return {
@@ -30,8 +33,13 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const resolvedParams = await params;
+  const post = getPostBySlug(resolvedParams.slug);
 
   if (!post) {
     notFound();
