@@ -11,6 +11,14 @@ import { Metadata } from "next";
 
 type Params = { slug: string };
 
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export async function generateStaticParams(): Promise<Params[]> {
   const posts = getAllPosts();
   return posts.map((post) => ({
@@ -59,7 +67,7 @@ export default async function BlogPost({
                 {post.description}
               </p>
               <div className="mt-4 flex items-center justify-center gap-3 text-xs text-muted-foreground">
-                <time>{post.date}</time>
+                <time>{formatDate(post.date)}</time>
                 <span>•</span>
                 <span>By {post.author}</span>
               </div>
