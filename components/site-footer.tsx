@@ -31,8 +31,8 @@ const footerSections: FooterSection[] = [
     title: "Resources",
     links: [
       { href: "#docs", label: "Documentation" },
-      { href: "#blog", label: "Blog" },
-      { href: "#changelog", label: "Changelog" },
+      { href: "/blog", label: "Blog" },
+      { href: "https://demo.bordful.com/changelog", label: "Changelog" },
     ],
   },
   {
@@ -41,7 +41,7 @@ const footerSections: FooterSection[] = [
       { href: "#help", label: "Help Center" },
       { href: "https://x.com/bordful", label: "Twitter/X" },
       { href: "https://www.linkedin.com/company/bordful", label: "LinkedIn" },
-      { href: "#contact", label: "Contact" },
+      { href: "mailto:support@bordful.com", label: "Contact" },
     ],
   },
   {

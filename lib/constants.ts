@@ -16,6 +16,6 @@ export const navConfig = {
     { href: "#use-cases", label: "Use Cases" },
     { href: "#templates", label: "Templates" },
     { href: "#showcase", label: "Showcase" },
-    { href: "#blog", label: "Blog" },
+    { href: "/blog", label: "Blog" },
   ],
 } as const;
