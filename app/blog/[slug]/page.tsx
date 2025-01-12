@@ -11,9 +11,7 @@ import { Metadata } from "next";
 import { formatDate } from "@/lib/utils";
 import { mdxComponents } from "@/components/mdx-components";
 
-type Params = { slug: string };
-
-export async function generateStaticParams(): Promise<Params[]> {
+export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
@@ -23,7 +21,7 @@ export async function generateStaticParams(): Promise<Params[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<Params>;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const resolvedParams = await params;
   const post = getPostBySlug(resolvedParams.slug);
@@ -38,7 +36,7 @@ export async function generateMetadata({
 export default async function BlogPost({
   params,
 }: {
-  params: Promise<Params>;
+  params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
   const post = getPostBySlug(resolvedParams.slug);

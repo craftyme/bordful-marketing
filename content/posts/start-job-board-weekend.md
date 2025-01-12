@@ -186,9 +186,9 @@ Time to go live! 🚀
 ### Launch Checklist
 
 1. **Final Testing**
-   - *Production environment*
-   - *All features*
-   - *Payment flow*
+   - Production environment
+   - All features
+   - Payment flow
 
 2. **SEO Setup**
 ```html
