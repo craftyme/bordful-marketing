@@ -6,11 +6,12 @@ import { SocialIcons } from "./social-icons";
 import { ActionButtons } from "./action-buttons";
 import { SiteLogo } from "./site-logo";
 import { MobileNav } from "./mobile-nav";
+import { Container } from "./ui/container";
 
 export function SiteHeader() {
   return (
     <header className="fixed top-4 left-0 right-0 z-50">
-      <div className="container">
+      <Container>
         <div className="flex h-14 items-center justify-between rounded-full border border-border bg-background/60 px-4 sm:px-6 backdrop-blur-md">
           <div className="flex items-center gap-4 sm:gap-6">
             <SiteLogo />
@@ -29,7 +30,7 @@ export function SiteHeader() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }
