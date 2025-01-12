@@ -3,20 +3,13 @@ import { Section } from "./ui/section";
 import { Container } from "./ui/container";
 import { CustomLink } from "./ui/link";
 import { getAllPosts } from "@/lib/blog";
+import { formatDate } from "@/lib/utils";
 
 interface BlogPost {
   title: string;
   description: string;
   date: string;
   href: string;
-}
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 }
 
 export const BlogCard = React.memo(function BlogCard({

@@ -31,6 +31,7 @@ export interface LinkProps
 
 const CustomLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
   ({ className, variant, href, external, children, ...props }, ref) => {
+    const isHashLink = href.startsWith("#");
     const externalProps = external
       ? { target: "_blank", rel: "noopener noreferrer" }
       : {};
@@ -40,6 +41,7 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
         className={cn(linkVariants({ variant, className }))}
         href={href}
         ref={ref}
+        scroll={!isHashLink}
         {...externalProps}
         {...props}
       >
@@ -48,6 +50,7 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, LinkProps>(
     );
   }
 );
+
 CustomLink.displayName = "CustomLink";
 
 export { CustomLink, linkVariants };
