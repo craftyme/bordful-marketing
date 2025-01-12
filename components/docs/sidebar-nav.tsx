@@ -1,17 +1,11 @@
+"use client";
+
 import * as React from "react";
+import { usePathname } from "next/navigation";
+import { CustomLink } from "@/components/ui/link";
 import { cn } from "@/lib/utils";
 
-interface DocLink {
-  title: string;
-  href: string;
-}
-
-interface DocSection {
-  title: string;
-  items: DocLink[];
-}
-
-const SIDEBAR_NAV_ITEMS: DocSection[] = [
+const items = [
   {
     title: "Getting Started",
     items: [
@@ -33,7 +27,7 @@ const SIDEBAR_NAV_ITEMS: DocSection[] = [
         href: "/docs/guides/airtable",
       },
       {
-        title: "Job Listings",
+        title: "Job Listings & Forms",
         href: "/docs/guides/job-listings",
       },
       {
@@ -58,8 +52,12 @@ const SIDEBAR_NAV_ITEMS: DocSection[] = [
         href: "/docs/api/authentication",
       },
       {
-        title: "Job Endpoints",
+        title: "Jobs",
         href: "/docs/api/jobs",
+      },
+      {
+        title: "Applications",
+        href: "/docs/api/applications",
       },
     ],
   },
@@ -67,46 +65,43 @@ const SIDEBAR_NAV_ITEMS: DocSection[] = [
     title: "Examples",
     items: [
       {
-        title: "Custom Forms",
-        href: "/docs/examples/forms",
+        title: "Job Board",
+        href: "/docs/examples/job-board",
       },
       {
-        title: "Search Integration",
-        href: "/docs/examples/search",
+        title: "Application Form",
+        href: "/docs/examples/application-form",
       },
       {
-        title: "Email Notifications",
-        href: "/docs/examples/notifications",
+        title: "Admin Dashboard",
+        href: "/docs/examples/admin-dashboard",
       },
     ],
   },
 ];
 
-interface SidebarNavProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export function SidebarNav({ className, ...props }: SidebarNavProps) {
-  const pathname =
-    typeof window !== "undefined" ? window.location.pathname : "";
+export function SidebarNav() {
+  const pathname = usePathname();
 
   return (
-    <div className={cn("space-y-6", className)} {...props}>
-      {SIDEBAR_NAV_ITEMS.map((section) => (
-        <div key={section.title} className="space-y-3">
-          <h4 className="font-medium">{section.title}</h4>
-          <div className="flex flex-col space-y-2">
+    <div className="w-full">
+      {items.map((section) => (
+        <div key={section.title} className="pb-8">
+          <h4 className="mb-1 text-sm font-medium">{section.title}</h4>
+          <div className="grid grid-flow-row auto-rows-max text-sm">
             {section.items.map((item) => (
-              <a
+              <CustomLink
                 key={item.href}
                 href={item.href}
+                variant="nav"
                 className={cn(
-                  "text-sm transition-colors hover:text-foreground/80",
-                  pathname === item.href
-                    ? "font-medium text-foreground"
-                    : "text-muted-foreground"
+                  "flex w-full items-center rounded-md p-2",
+                  pathname === item.href &&
+                    "bg-muted font-medium text-foreground"
                 )}
               >
                 {item.title}
-              </a>
+              </CustomLink>
             ))}
           </div>
         </div>
