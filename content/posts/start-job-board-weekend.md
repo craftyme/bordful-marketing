@@ -5,10 +5,9 @@ date: "2025-01-11"
 author: "Tomas Laurinavicius"
 ---
 
-Want to start a profitable job board but think it's too complicated? Think again! With [Bordful](https://github.com/tomaslau/bordful) and [Airtable](https://airtable.com), you can launch your niche job board in a weekend. Here's your complete roadmap to going from idea to launch in just two days.
+Want to start a profitable job board but think it's too complicated?
 
-![Weekend Project](/images/blog/weekend-project.jpg)
-*Transform your weekend into a successful job board launch*
+Think again! With [Bordful](https://github.com/tomaslau/bordful) and [Airtable](https://airtable.com), you can launch your niche job board in a weekend. Here's your complete roadmap to going from idea to launch in just two days.
 
 ## Saturday Morning: Planning & Setup
 
@@ -57,31 +56,31 @@ Now that we have our foundation, let's configure the core functionality.
 ### Setting Up Airtable
 
 1. Create a new base with these tables:
-   ```typescript
-   // jobs table
-   {
-     title: string
-     company: string
-     description: string
-     location: string
-     type: "full-time" | "part-time" | "contract"
-   }
-   
-   // applications table
-   {
-     jobId: string
-     email: string
-     name: string
-     resume: attachment
-   }
-   ```
+```typescript
+// jobs table
+{
+   title: string
+   company: string
+   description: string
+   location: string
+   type: "full-time" | "part-time" | "contract"
+}
+
+// applications table
+{
+   jobId: string
+   email: string
+   name: string
+   resume: attachment
+}
+```
 
 2. Configure your environment variables:
-   ```env
-   AIRTABLE_API_KEY=your_api_key
-   AIRTABLE_BASE_ID=your_base_id
-   NEXT_PUBLIC_SITE_URL=http://localhost:3000
-   ```
+```env
+AIRTABLE_API_KEY=your_api_key
+AIRTABLE_BASE_ID=your_base_id
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
 
 > **Pro Tip**: Keep your API keys secure and never commit them to version control.
 
@@ -92,27 +91,27 @@ Time to make your job board unique! Here's what to customize:
 ### Branding Updates
 
 1. Update `lib/constants.ts`:
-   ```typescript
-   export const siteConfig = {
-     name: "Your Job Board",
-     description: "Your niche job board description",
-     // ... other config
-   }
-   ```
+```typescript
+export const siteConfig = {
+   name: "Your Job Board",
+   description: "Your niche job board description",
+   // ... other config
+}
+```
 
 2. Style customization in `tailwind.config.ts`:
-   ```typescript
-   export default {
-     theme: {
-       extend: {
-         colors: {
-           primary: "your-brand-color",
-           // ... other colors
-         }
-       }
-     }
+```typescript
+export default {
+   theme: {
+      extend: {
+      colors: {
+         primary: "your-brand-color",
+         // ... other colors
+      }
+      }
    }
-   ```
+}
+```
 
 ### Content Modifications
 
@@ -130,28 +129,28 @@ Let's ensure everything works perfectly.
 ### Essential Features
 
 1. **Job Search**
-   ```typescript
-   // Add search functionality
-   const searchJobs = async (query: string) => {
-     // Implementation
-   }
-   ```
+```typescript
+// Add search functionality
+const searchJobs = async (query: string) => {
+   // Implementation
+}
+```
 
 2. **Category Filters**
-   ```typescript
-   // Add filter functionality
-   const filterJobs = (category: string) => {
-     // Implementation
-   }
-   ```
+```typescript
+// Add filter functionality
+const filterJobs = (category: string) => {
+   // Implementation
+}
+```
 
 ### Testing Checklist
 
-- [ ] Mobile responsiveness
-- [ ] Job posting flow
-- [ ] Application process
-- [ ] Email notifications
-- [ ] Payment integration
+- Mobile responsiveness
+- Job posting flow
+- Application process
+- Email notifications
+- Payment integration
 
 ## Sunday Afternoon: Launch Preparation
 
@@ -165,10 +164,10 @@ Almost there! Time to prepare for launch.
    - [Google Domains](https://domains.google)
 
 2. Configure DNS:
-   ```bash
-   # Example Vercel CLI command
-   vercel domains add yourdomain.com
-   ```
+```bash
+# Example Vercel CLI command
+vercel domains add yourdomain.com
+```
 
 ### Pricing Configuration
 
@@ -192,11 +191,11 @@ Time to go live! 🚀
    - *Payment flow*
 
 2. **SEO Setup**
-   ```html
-   <!-- Example meta tags -->
-   <meta name="description" content="Your job board description">
-   <meta property="og:title" content="Your Job Board">
-   ```
+```html
+<!-- Example meta tags -->
+<meta name="description" content="Your job board description">
+<meta property="og:title" content="Your Job Board">
+```
 
 ### Marketing Quick Wins
 
@@ -214,25 +213,25 @@ Time to go live! 🚀
 
 After launch, focus on growth:
 
-1. **Content Strategy**
-   - Blog posts
-   - Newsletter
-   - Social media
+**Content Strategy**
+1. Blog posts
+2. Newsletter
+3. Social media
 
-2. **Monitoring**
-   - Track metrics
-   - Gather feedback
-   - Plan improvements
+**Monitoring**
+1. Track metrics
+2. Gather feedback
+3. Plan improvements
 
 ## Pro Tips for Success
 
 Here are some key tips to remember:
 
-- *Start Small*: Focus on one niche
-- *Quality First*: Curate carefully
-- *Build Community*: Engage actively
-- *Iterate Fast*: Improve continuously
-- *Stay Consistent*: Update regularly
+- **Start Small**: Focus on one niche
+- **Quality First**: Curate carefully
+- **Build Community**: Engage actively
+- **Iterate Fast**: Improve continuously
+- **Stay Consistent**: Update regularly
 
 ## Final Thoughts
 
