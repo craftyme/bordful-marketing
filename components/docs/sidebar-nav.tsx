@@ -86,24 +86,25 @@ export function SidebarNav() {
   return (
     <div className="w-full">
       {items.map((section) => (
-        <div key={section.title} className="pb-8">
-          <h4 className="mb-1 text-sm font-medium">{section.title}</h4>
-          <div className="grid grid-flow-row auto-rows-max text-sm">
+        <div key={section.title} className="mb-6">
+          <div className="mb-2 text-sm font-medium text-muted-foreground">
+            {section.title}
+          </div>
+          <nav className="space-y-1">
             {section.items.map((item) => (
               <CustomLink
                 key={item.href}
                 href={item.href}
                 variant="nav"
                 className={cn(
-                  "flex w-full items-center rounded-md p-2",
-                  pathname === item.href &&
-                    "bg-muted font-medium text-foreground"
+                  "block text-sm text-muted-foreground hover:text-foreground",
+                  pathname === item.href && "font-medium text-foreground"
                 )}
               >
                 {item.title}
               </CustomLink>
             ))}
-          </div>
+          </nav>
         </div>
       ))}
     </div>

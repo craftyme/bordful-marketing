@@ -1,12 +1,15 @@
-import { SectionHeader } from "@/components/ui/section-header";
-
 export default function DocsPage() {
   return (
     <div className="space-y-6">
-      <SectionHeader
-        title="Documentation"
-        description="Welcome to the Bordful documentation. Learn how to create and customize your job board."
-      />
+      <div>
+        <h1 className="mb-3 text-2xl font-medium tracking-tight sm:text-3xl">
+          Documentation
+        </h1>
+        <p className="text-sm text-muted-foreground text-balance max-w-[750px]">
+          Welcome to the Bordful documentation. Learn how to create and
+          customize your job board.
+        </p>
+      </div>
 
       <div className="space-y-4">
         <h2 className="text-xl font-medium tracking-tight">Overview</h2>
