@@ -84,7 +84,7 @@ const Feature = React.memo(function Feature({ text }: Feature) {
   return (
     <li className="flex text-sm text-muted-foreground">
       <svg
-        className="mr-2 h-5 w-5 text-primary"
+        className="mr-2 h-5 w-5 text-foreground"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -115,7 +115,7 @@ const PricingCard = React.memo(function PricingCard({
     <div
       className={cn(
         "flex flex-col rounded-lg border bg-background/50 p-6 backdrop-blur-sm",
-        highlight && "border-primary"
+        highlight && "border-foreground"
       )}
     >
       <h3 className="text-lg font-medium">{name}</h3>

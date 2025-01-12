@@ -3,13 +3,11 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import remarkGfm from "remark-gfm";
 import { CustomLink } from "@/components/ui/link";
-import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
-import { formatDate } from "@/lib/utils";
-import { mdxComponents } from "@/components/mdx-components";
+import { ArticleLayout } from "@/components/article-layout";
+import { TableOfContents } from "@/components/table-of-contents";
+import { extractHeadings } from "@/lib/mdx";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -45,43 +43,37 @@ export default async function BlogPost({
     notFound();
   }
 
+  const headings = extractHeadings(post.content);
+  const showTableOfContents = headings.length >= 3; // Only show for posts with 3 or more headings
+
   return (
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
-          <div className="mx-auto max-w-2xl">
-            <div className="mb-16 text-center">
-              <Badge className="mb-8 text-muted-foreground">Blog Post</Badge>
-              <h1 className="mb-6 text-2xl font-medium tracking-tight sm:text-3xl">
-                {post.title}
-              </h1>
-              <p className="mx-auto mb-6 max-w-[600px] text-sm text-muted-foreground text-balance">
-                {post.description}
-              </p>
-              <div className="flex items-center justify-center gap-3 text-xs text-muted-foreground">
-                <time>{formatDate(post.date)}</time>
-                <span>•</span>
-                <span>By {post.author}</span>
+          <div className="mx-auto flex max-w-[calc(42rem+16rem+2.5rem)] gap-10">
+            <div className="flex-1 max-w-2xl">
+              <ArticleLayout
+                title={post.title}
+                description={post.description}
+                content={post.content}
+                date={post.date}
+                badge={{
+                  text: "Blog Post",
+                }}
+              >
+                <div className="text-xs text-muted-foreground">
+                  By {post.author}
+                </div>
+              </ArticleLayout>
+
+              <div className="mt-8">
+                <CustomLink href="/blog" variant="button">
+                  Back to Blog
+                </CustomLink>
               </div>
             </div>
 
-            <article className="prose prose-sm prose-neutral dark:prose-invert max-w-none">
-              <MDXRemote
-                source={post.content}
-                options={{
-                  mdxOptions: {
-                    remarkPlugins: [remarkGfm],
-                  },
-                }}
-                components={mdxComponents}
-              />
-            </article>
-
-            <div className="mt-8 text-center">
-              <CustomLink href="/blog" variant="button">
-                Back to Blog
-              </CustomLink>
-            </div>
+            {showTableOfContents && <TableOfContents headings={headings} />}
           </div>
         </Container>
       </Section>

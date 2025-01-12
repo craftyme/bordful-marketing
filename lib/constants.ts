@@ -14,7 +14,7 @@ export const navConfig = {
     { href: "#features", label: "Features" },
     { href: "#pricing", label: "Pricing" },
     { href: "#use-cases", label: "Use Cases" },
-    { href: "#templates", label: "Templates" },
+    { href: "/docs", label: "Docs" },
     { href: "#showcase", label: "Showcase" },
     { href: "/blog", label: "Blog" },
   ],

@@ -3,6 +3,14 @@ import { GeistMono } from "geist/font/mono";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+// Helper function to generate slug from text
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 export const mdxComponents = {
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
@@ -53,47 +61,65 @@ export const mdxComponents = {
   },
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a
-      className="inline-flex items-center text-primary font-medium relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
+      className="inline-flex items-center text-foreground font-medium relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-foreground after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100"
       target={props.href?.startsWith("http") ? "_blank" : undefined}
       rel={props.href?.startsWith("http") ? "noopener noreferrer" : undefined}
       {...props}
     />
   ),
-  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h1: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className="mt-12 mb-6 text-3xl font-medium tracking-tight text-foreground sm:text-4xl"
+      id={slugify(children as string)}
       {...props}
-    />
+    >
+      {children}
+    </h1>
   ),
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h2: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className="mt-8 mb-4 text-2xl font-medium tracking-tight text-foreground"
+      id={slugify(children as string)}
       {...props}
-    />
+    >
+      {children}
+    </h2>
   ),
-  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className="mt-6 mb-4 text-xl font-medium tracking-tight text-foreground"
+      id={slugify(children as string)}
       {...props}
-    />
+    >
+      {children}
+    </h3>
   ),
-  h4: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h4: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className="mt-6 mb-4 text-lg font-medium tracking-tight text-foreground"
+      id={slugify(children as string)}
       {...props}
-    />
+    >
+      {children}
+    </h4>
   ),
-  h5: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h5: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
       className="mt-6 mb-4 text-base font-medium tracking-tight text-foreground"
+      id={slugify(children as string)}
       {...props}
-    />
+    >
+      {children}
+    </h5>
   ),
-  h6: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+  h6: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h6
       className="mt-6 mb-4 text-sm font-medium tracking-tight text-foreground"
+      id={slugify(children as string)}
       {...props}
-    />
+    >
+      {children}
+    </h6>
   ),
   ol: (props: React.OlHTMLAttributes<HTMLOListElement>) => (
     <ol

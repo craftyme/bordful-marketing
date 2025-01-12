@@ -1,0 +1,78 @@
+---
+title: Quick Start Guide
+description: Get your job board up and running in minutes with this step-by-step guide.
+lastUpdated: "2024-02-20"
+---
+
+Follow these steps to get your job board up and running quickly.
+
+## 1. Clone the Repository
+
+Start by cloning the Bordful repository to your local machine:
+
+```bash
+git clone https://github.com/tomaslau/bordful.git
+```
+
+## 2. Install Dependencies
+
+Navigate to the project directory and install the required dependencies:
+
+```bash
+cd bordful
+pnpm install
+```
+
+## 3. Set Up Airtable
+
+Create a new Airtable base for your job board:
+
+- Create a new base in Airtable
+- Create a "Jobs" table with the required fields:
+  ```typescript
+  interface Job {
+    title: string;
+    company: string;
+    description: string;
+    location: string;
+    type: "full-time" | "part-time" | "contract";
+  }
+  ```
+- Copy your Airtable API key and base ID
+
+## 4. Configure Environment Variables
+
+Create a `.env.local` file in the project root and add your Airtable credentials:
+
+```env
+AIRTABLE_API_KEY=your_api_key
+AIRTABLE_BASE_ID=your_base_id
+AIRTABLE_TABLE_NAME=Jobs
+```
+
+## 5. Start the Development Server
+
+Run the development server to see your job board in action:
+
+```bash
+pnpm dev
+```
+
+Open `http://localhost:3000` in your browser to see your job board.
+
+## Next Steps
+
+Now that your job board is up and running, you can:
+
+- Customize the design using Tailwind CSS
+- Add your own logo and branding
+- Configure job submission forms
+- Set up email notifications
+- Deploy to Vercel or your preferred hosting platform
+
+Check out our detailed guides for more information on customizing and extending your job board:
+
+- [Airtable Setup Guide](/docs/guides/airtable)
+- [Job Listings & Forms](/docs/guides/job-listings)
+- [Customization Guide](/docs/guides/customization)
+- [Deployment Guide](/docs/guides/deployment)

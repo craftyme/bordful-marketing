@@ -30,7 +30,7 @@ const footerSections: FooterSection[] = [
   {
     title: "Resources",
     links: [
-      { href: "#docs", label: "Documentation" },
+      { href: "/docs", label: "Documentation" },
       { href: "/blog", label: "Blog" },
       { href: "https://demo.bordful.com/changelog", label: "Changelog" },
     ],

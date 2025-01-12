@@ -14,7 +14,7 @@ export const CategoryBadge = React.memo(function CategoryBadge({
   return (
     <span
       className={cn(
-        "inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary",
+        "inline-block rounded-full bg-foreground/10 px-3 py-1 text-xs font-medium text-foreground",
         className
       )}
       aria-label={`Category: ${category}`}
