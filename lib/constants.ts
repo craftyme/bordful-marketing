@@ -11,7 +11,7 @@ export const siteConfig = {
 
 export const navConfig = {
   mainNav: [
-    { href: "#features", label: "Features" },
+    { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
     { href: "#use-cases", label: "Use Cases" },
     { href: "/docs", label: "Docs" },
