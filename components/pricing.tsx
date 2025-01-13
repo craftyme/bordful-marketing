@@ -36,34 +36,6 @@ const plans: Plan[] = [
     external: true,
   },
   {
-    name: "Pro",
-    price: "$299",
-    description: "For solopreneurs and founders",
-    features: [
-      "Premium job board templates",
-      "Advanced customization",
-      "No subscription fees",
-      "Free lifetime updates",
-      "Email support",
-    ],
-    cta: "Buy Pro",
-    href: "#buy-pro",
-  },
-  {
-    name: "Business",
-    price: "$799",
-    description: "For agencies and teams",
-    features: [
-      "Everything in Pro plan",
-      "Team collaboration",
-      "No recurring fees",
-      "Multiple projects license",
-      "Email support",
-    ],
-    cta: "Buy Business",
-    href: "#buy-business",
-  },
-  {
     name: "Custom Setup",
     price: "$499",
     description: "Let us handle everything for you",
@@ -75,7 +47,7 @@ const plans: Plan[] = [
       "Email support",
     ],
     cta: "Order Setup",
-    href: "#order-setup",
+    href: "mailto:business@bordful.com?subject=Bordful%20custom%20installation&body=Hi%2C%20I%27m%20interested%20in%20building%20a%20job%20board.%20Here%20are%20more%20details%3A%20",
     highlight: true,
   },
 ];
@@ -145,8 +117,8 @@ const PricingHeader = React.memo(function PricingHeader() {
         Pricing
       </h2>
       <p className="mx-auto mt-3 max-w-[600px] text-sm text-muted-foreground text-balance">
-        Choose between our open source version or premium options with
-        additional features and support.
+        Get started with our open source version or let us handle the complete
+        setup for you with our custom installation service.
       </p>
     </div>
   );
@@ -157,7 +129,7 @@ export function Pricing() {
     <Section id="pricing" variant="secondary">
       <Container>
         <PricingHeader />
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
           {plans.map((plan) => (
             <PricingCard key={plan.name} {...plan} />
           ))}
