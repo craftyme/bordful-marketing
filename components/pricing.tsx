@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Section } from "./ui/section";
-import { Container } from "./ui/container";
 import { CustomLink } from "./ui/link";
 import { cn } from "@/lib/utils";
+import { Section } from "./ui/section";
+import { Container } from "./ui/container";
 
 interface Feature {
   text: string;
@@ -17,6 +17,10 @@ interface Plan {
   href: string;
   external?: boolean;
   highlight?: boolean;
+}
+
+interface PricingProps {
+  variant?: "standalone" | "section";
 }
 
 const plans: Plan[] = [
@@ -117,28 +121,44 @@ const PricingHeader = React.memo(function PricingHeader() {
         Pricing
       </h2>
       <p className="mx-auto mt-3 max-w-[600px] text-sm text-muted-foreground text-balance">
-        Get started with our open source version or let us handle the complete
-        setup for you with our custom installation service.
+        Choose between our open source version or let us handle the complete
+        setup with our custom installation service.
       </p>
     </div>
   );
 });
 
-export function Pricing() {
+const PricingContent = React.memo(function PricingContent() {
   return (
-    <Section id="pricing" variant="secondary">
-      <Container>
-        <PricingHeader />
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
-          {plans.map((plan) => (
-            <PricingCard key={plan.name} {...plan} />
-          ))}
-        </div>
-        <div className="mt-8 text-center text-xs text-muted-foreground">
-          <p>All payments are processed & secured by Stripe.</p>
-          <p className="mt-1">Price in USD. VAT may apply.</p>
-        </div>
-      </Container>
-    </Section>
+    <>
+      <div className="grid gap-6 sm:grid-cols-2">
+        {plans.map((plan) => (
+          <PricingCard key={plan.name} {...plan} />
+        ))}
+      </div>
+      <div className="mt-8 text-center text-xs text-muted-foreground">
+        <p>All payments are processed & secured by Stripe.</p>
+        <p className="mt-1">Price in USD. VAT may apply.</p>
+      </div>
+    </>
   );
+});
+
+export function Pricing({ variant = "section" }: PricingProps) {
+  if (variant === "section") {
+    return (
+      <Section id="pricing" variant="secondary">
+        <Container>
+          <div className="mx-auto max-w-2xl">
+            <PricingHeader />
+            <div className="mt-8">
+              <PricingContent />
+            </div>
+          </div>
+        </Container>
+      </Section>
+    );
+  }
+
+  return <PricingContent />;
 }
