@@ -11,7 +11,7 @@ const DOCS = {
     title: "Quick Start Guide",
     description:
       "Get your job board up and running in minutes. Learn how to clone, customize, and deploy your first job board.",
-    href: "#quick-start",
+    href: "/docs/quick-start",
     badge: "Start Here" as const,
   },
   AIRTABLE: {
@@ -87,7 +87,7 @@ export function Documentation() {
             description="Everything you need to know about Bordful. From quick start to advanced customization, our docs have you covered."
           />
           <div className="mt-8">
-            <CustomLink href="#full-docs" variant="button">
+            <CustomLink href="/docs" variant="button">
               Browse All Docs
             </CustomLink>
           </div>
