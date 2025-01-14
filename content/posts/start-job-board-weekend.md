@@ -27,7 +27,7 @@ The key to a successful job board is focusing on a specific:
 Before diving into development, ensure you have:
 
 1. Node.js (v18 or later)
-2. pnpm package manager
+2. npm package manager
 3. GitHub account
 4. Vercel account
 
@@ -43,7 +43,7 @@ git clone https://github.com/tomaslau/bordful
 cd bordful
 
 # Install dependencies
-pnpm install
+npm install
 
 # Copy environment variables
 cp .env.example .env
@@ -56,26 +56,28 @@ Now that we have our foundation, let's configure the core functionality.
 ### Setting Up Airtable
 
 1. Create a new base with these tables:
+
 ```typescript
 // jobs table
 {
-   title: string
-   company: string
-   description: string
-   location: string
-   type: "full-time" | "part-time" | "contract"
+  title: string;
+  company: string;
+  description: string;
+  location: string;
+  type: "full-time" | "part-time" | "contract";
 }
 
 // applications table
 {
-   jobId: string
-   email: string
-   name: string
-   resume: attachment
+  jobId: string;
+  email: string;
+  name: string;
+  resume: attachment;
 }
 ```
 
 2. Configure your environment variables:
+
 ```env
 AIRTABLE_API_KEY=your_api_key
 AIRTABLE_BASE_ID=your_base_id
@@ -91,26 +93,28 @@ Time to make your job board unique! Here's what to customize:
 ### Branding Updates
 
 1. Update `lib/constants.ts`:
+
 ```typescript
 export const siteConfig = {
-   name: "Your Job Board",
-   description: "Your niche job board description",
-   // ... other config
-}
+  name: "Your Job Board",
+  description: "Your niche job board description",
+  // ... other config
+};
 ```
 
 2. Style customization in `tailwind.config.ts`:
+
 ```typescript
 export default {
-   theme: {
-      extend: {
+  theme: {
+    extend: {
       colors: {
-         primary: "your-brand-color",
-         // ... other colors
-      }
-      }
-   }
-}
+        primary: "your-brand-color",
+        // ... other colors
+      },
+    },
+  },
+};
 ```
 
 ### Content Modifications
@@ -120,7 +124,7 @@ Replace the default content with your niche-specific information:
 - Update homepage hero section
 - Customize pricing plans
 - Add relevant categories
-- Set up your logo (*recommended size: 180x40px*)
+- Set up your logo (_recommended size: 180x40px_)
 
 ## Sunday Morning: Features & Testing
 
@@ -129,19 +133,21 @@ Let's ensure everything works perfectly.
 ### Essential Features
 
 1. **Job Search**
+
 ```typescript
 // Add search functionality
 const searchJobs = async (query: string) => {
-   // Implementation
-}
+  // Implementation
+};
 ```
 
 2. **Category Filters**
+
 ```typescript
 // Add filter functionality
 const filterJobs = (category: string) => {
-   // Implementation
-}
+  // Implementation
+};
 ```
 
 ### Testing Checklist
@@ -159,11 +165,13 @@ Almost there! Time to prepare for launch.
 ### Domain Setup
 
 1. Purchase a domain (recommended providers):
+
    - [Vercel Domains](https://vercel.com/domains)
    - [Namecheap](https://namecheap.com)
    - [Google Domains](https://domains.google)
 
 2. Configure DNS:
+
 ```bash
 # Example Vercel CLI command
 vercel domains add yourdomain.com
@@ -186,20 +194,23 @@ Time to go live! 🚀
 ### Launch Checklist
 
 1. **Final Testing**
+
    - Production environment
    - All features
    - Payment flow
 
 2. **SEO Setup**
+
 ```html
 <!-- Example meta tags -->
-<meta name="description" content="Your job board description">
-<meta property="og:title" content="Your Job Board">
+<meta name="description" content="Your job board description" />
+<meta property="og:title" content="Your Job Board" />
 ```
 
 ### Marketing Quick Wins
 
 1. **Social Media**
+
    - Share on [Twitter](https://twitter.com)
    - Post on [LinkedIn](https://linkedin.com)
    - Submit to [Product Hunt](https://producthunt.com)
@@ -214,11 +225,13 @@ Time to go live! 🚀
 After launch, focus on growth:
 
 **Content Strategy**
+
 1. Blog posts
 2. Newsletter
 3. Social media
 
 **Monitoring**
+
 1. Track metrics
 2. Gather feedback
 3. Plan improvements
@@ -241,4 +254,4 @@ Ready to start your own job board? [Clone Bordful now](https://github.com/tomasl
 
 ---
 
-*Need help? Join our [Discord community](https://discord.gg/bordful) or check out our [documentation](https://docs.bordful.com).* 
+_Need help? Join our [Discord community](https://discord.gg/bordful) or check out our [documentation](https://docs.bordful.com)._

@@ -23,19 +23,22 @@ The marketing website for Bordful - a modern, customizable job board template bu
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/tomaslau/bordful-marketing.git
 cd bordful-marketing
 ```
 
 2. Install dependencies:
+
 ```bash
-pnpm install
+npm install
 ```
 
 3. Start the development server:
+
 ```bash
-pnpm dev
+npm dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
