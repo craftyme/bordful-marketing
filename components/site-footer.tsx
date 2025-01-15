@@ -23,12 +23,12 @@ const footerSections: FooterSection[] = [
       { href: "/pricing", label: "Pricing" },
       { href: "#use-cases", label: "Use Cases" },
       { href: "/docs/integrations", label: "Integrations" },
-      { href: "#showcase", label: "Showcase" },
     ],
   },
   {
     title: "Resources",
     links: [
+      { href: "/showcase", label: "Showcase" },
       { href: "/docs", label: "Documentation" },
       { href: "/blog", label: "Blog" },
       { href: "https://demo.bordful.com/changelog", label: "Changelog" },

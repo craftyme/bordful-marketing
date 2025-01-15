@@ -7,6 +7,11 @@ import { CategoryBadge } from "./ui/category-badge";
 import { SectionHeader } from "./ui/section-header";
 import { GridLayout } from "./ui/grid-layout";
 
+interface ShowcaseProps {
+  variant?: "standalone" | "section";
+  limit?: number;
+}
+
 interface ShowcaseItem {
   title: string;
   description: string;
@@ -153,20 +158,39 @@ const ShowcaseCard = React.memo(function ShowcaseCard({
   );
 });
 
-export function Showcase() {
-  return (
-    <Section id="showcase" variant="secondary">
-      <Container>
+export function Showcase({ variant = "section", limit }: ShowcaseProps) {
+  const items = limit ? showcaseItems.slice(0, limit) : showcaseItems;
+
+  const content = (
+    <>
+      {variant === "section" && (
         <SectionHeader
           title="Built with Bordful"
           description="Discover successful job boards powered by Bordful. From niche industry boards to regional platforms, see how others are using our template."
         />
-        <GridLayout>
-          {showcaseItems.map((item) => (
-            <ShowcaseCard key={item.title} {...item} />
-          ))}
-        </GridLayout>
-      </Container>
-    </Section>
+      )}
+      <GridLayout>
+        {items.map((item) => (
+          <ShowcaseCard key={item.title} {...item} />
+        ))}
+      </GridLayout>
+      {variant === "section" && items.length < showcaseItems.length && (
+        <div className="mt-8 flex justify-center">
+          <CustomLink href="/showcase" variant="button">
+            View All Sites
+          </CustomLink>
+        </div>
+      )}
+    </>
   );
+
+  if (variant === "section") {
+    return (
+      <Section id="showcase" variant="secondary">
+        <Container>{content}</Container>
+      </Section>
+    );
+  }
+
+  return content;
 }

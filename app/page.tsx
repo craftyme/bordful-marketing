@@ -19,7 +19,7 @@ export default function Home() {
       <Features />
       <UseCases />
       <Integrations />
-      <Showcase />
+      <Showcase limit={3} />
       <Documentation />
       <Blog />
       <Pricing />
