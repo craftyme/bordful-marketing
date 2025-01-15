@@ -1,0 +1,130 @@
+---
+title: "Airtable Integration"
+description: "Learn how to integrate Airtable with your Bordful job board to manage job listings and applications."
+lastUpdated: "2024-03-19"
+---
+
+## Overview
+
+Airtable serves as the primary database for your Bordful job board, storing and managing job listings and applications. This guide will walk you through setting up and configuring Airtable for your job board.
+
+## Prerequisites
+
+Before you begin, you'll need:
+
+- An Airtable account
+- Your Bordful job board codebase
+- Basic understanding of Airtable's interface
+
+## Setting Up Your Base
+
+1. Create a new Airtable base
+2. Set up the following tables:
+   - Jobs
+   - Applications
+   - Categories (optional)
+   - Locations (optional)
+
+## Jobs Table Structure
+
+The Jobs table should include these essential fields:
+
+| Field Name  | Field Type       | Description                           |
+| ----------- | ---------------- | ------------------------------------- |
+| Title       | Single line text | The job posting title                 |
+| Description | Long text        | Full job description                  |
+| Company     | Single line text | Company name                          |
+| Location    | Single line text | Job location                          |
+| Type        | Single select    | Job type (Full-time, Part-time, etc.) |
+| Category    | Single select    | Job category                          |
+| Salary      | Single line text | Salary range or compensation          |
+| Status      | Single select    | Active, Draft, or Closed              |
+| Posted      | Date             | Job posting date                      |
+| Slug        | Formula          | URL-friendly version of the title     |
+
+## Applications Table Structure
+
+The Applications table should include:
+
+| Field Name   | Field Type       | Description                       |
+| ------------ | ---------------- | --------------------------------- |
+| Name         | Single line text | Applicant's full name             |
+| Email        | Email            | Applicant's email address         |
+| Resume       | Attachment       | Uploaded resume/CV                |
+| Cover Letter | Long text        | Cover letter or introduction      |
+| Job          | Link             | Link to related job in Jobs table |
+| Status       | Single select    | Application status                |
+| Applied      | Date             | Application submission date       |
+
+## Environment Variables
+
+Add these environment variables to your `.env.local` file:
+
+```bash
+AIRTABLE_API_KEY=your_api_key
+AIRTABLE_BASE_ID=your_base_id
+AIRTABLE_JOBS_TABLE=Jobs
+AIRTABLE_APPLICATIONS_TABLE=Applications
+```
+
+## API Integration
+
+The Bordful template includes built-in Airtable integration. Here's how to use it:
+
+```typescript
+import { getJobs, createApplication } from "@/lib/airtable";
+
+// Fetch all active jobs
+const jobs = await getJobs({ status: "Active" });
+
+// Submit a new application
+const application = await createApplication({
+  name: "John Doe",
+  email: "john@example.com",
+  jobId: "rec123xyz",
+  resume: fileBuffer,
+  coverLetter: "I'm excited to apply...",
+});
+```
+
+## Customization
+
+You can customize the integration by:
+
+1. Adding custom fields to tables
+2. Modifying the data structure
+3. Implementing additional features like:
+   - Custom filtering
+   - Advanced search
+   - Application tracking
+   - Email notifications
+
+## Security Considerations
+
+1. Keep your API key secure
+2. Use environment variables
+3. Implement rate limiting
+4. Validate user input
+5. Set up proper view permissions
+
+## Troubleshooting
+
+Common issues and solutions:
+
+1. **API Rate Limits**: Implement caching to reduce API calls
+2. **Missing Fields**: Ensure all required fields exist in your tables
+3. **Permission Errors**: Check your API key permissions
+4. **Data Validation**: Implement proper validation for all form submissions
+
+## Next Steps
+
+- Set up your job submission form
+- Customize the job listing display
+- Implement application tracking
+- Add email notifications
+
+For more detailed guides, check out:
+
+- [Job Listings & Forms](/docs/guides/job-listings)
+- [Customization](/docs/guides/customization)
+- [API Reference](/docs/api)

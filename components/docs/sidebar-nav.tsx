@@ -41,6 +41,19 @@ const items = [
     ],
   },
   {
+    title: "Integrations",
+    items: [
+      {
+        title: "Overview",
+        href: "/docs/integrations",
+      },
+      {
+        title: "Airtable",
+        href: "/docs/integrations/airtable",
+      },
+    ],
+  },
+  {
     title: "API Reference",
     items: [
       {

@@ -1,0 +1,73 @@
+---
+title: "Integrations Overview"
+description: "Overview of available integrations and how to extend Bordful with third-party services."
+lastUpdated: "2024-03-19"
+---
+
+## Available Integrations
+
+Bordful supports various integrations to help you build a powerful job board. Here are the currently available integrations:
+
+### Database & Storage
+
+- [Airtable](/docs/integrations/airtable) - Primary database for job listings and applications
+- PostgreSQL (Coming Soon) - Alternative database option for self-hosted deployments
+- Supabase (Coming Soon) - Open source Firebase alternative
+
+### Email & Communications
+
+- Resend (Coming Soon) - Transactional emails and notifications
+- MailerSend (Coming Soon) - Email service for job alerts and updates
+- SendGrid (Coming Soon) - Email delivery and management
+
+### Analytics & Tracking
+
+- Google Analytics (Coming Soon) - Website traffic and user behavior
+- Plausible (Coming Soon) - Privacy-friendly analytics
+- PostHog (Coming Soon) - Product analytics and feature flags
+
+### AI & Automation
+
+- OpenAI (Coming Soon) - AI-powered job description enhancement
+- Loops (Coming Soon) - Automated email workflows
+- Kadoa (Coming Soon) - Job market intelligence
+
+### Payments & Billing
+
+- Stripe (Coming Soon) - Process payments for job listings
+- Polar (Coming Soon) - Open source sponsorship platform
+
+### Productivity
+
+- Notion (Coming Soon) - Content management and documentation
+- Google Sheets (Coming Soon) - Data export and reporting
+
+## Adding New Integrations
+
+Bordful is designed to be extensible. You can add new integrations by:
+
+1. Creating an API client in `lib/integrations`
+2. Adding environment variables for configuration
+3. Implementing the integration logic
+4. Adding documentation in the integrations section
+
+## Best Practices
+
+When working with integrations:
+
+1. Keep API keys and credentials secure
+2. Implement proper error handling
+3. Add type definitions for better development experience
+4. Write tests for integration functionality
+5. Document usage and configuration
+
+## Contributing
+
+We welcome contributions for new integrations. To contribute:
+
+1. Fork the repository
+2. Create a new integration following our guidelines
+3. Add documentation and examples
+4. Submit a pull request
+
+For more information on contributing, check out our [GitHub repository](https://github.com/bordful/bordful).

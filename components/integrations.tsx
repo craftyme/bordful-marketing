@@ -12,6 +12,7 @@ interface Integration {
   status: "live" | "soon";
   description: string;
   icon: React.ReactElement;
+  href?: string;
 }
 
 const StatusBadge = React.memo(function StatusBadge({
@@ -39,9 +40,14 @@ const IntegrationCard = React.memo(function IntegrationCard({
   status,
   description,
   icon,
+  href,
 }: Integration) {
   return (
-    <div className="flex items-start gap-4 rounded-lg border bg-background/50 p-5 backdrop-blur-sm transition-colors hover:bg-background/80">
+    <div
+      className="flex items-start gap-4 rounded-lg border bg-background/50 p-5 backdrop-blur-sm transition-colors hover:bg-background/80"
+      {...(href ? { onClick: () => (window.location.href = href) } : {})}
+      {...(href ? { style: { cursor: "pointer" } } : {})}
+    >
       {icon}
       <div className="flex-1">
         <h3 className="mb-1 text-sm font-medium">{name}</h3>
@@ -81,6 +87,7 @@ const integrations: Integration[] = [
     name: "Airtable",
     status: "live",
     description: "Store and manage job data in customizable tables and views",
+    href: "/docs/integrations/airtable",
     icon: (
       <Image
         src="/images/logos/airtable.svg"
