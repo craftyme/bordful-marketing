@@ -3,6 +3,7 @@ import { Pricing } from "@/components/pricing";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { FAQ } from "@/components/faq";
 
 export const metadata: Metadata = {
   title: "Pricing - Bordful",
@@ -25,6 +26,14 @@ export default function PricingPage() {
             <div className="mt-16">
               <Pricing variant="standalone" />
             </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section variant="secondary">
+        <Container>
+          <div className="mx-auto max-w-[800px]">
+            <FAQ variant="standalone" />
           </div>
         </Container>
       </Section>

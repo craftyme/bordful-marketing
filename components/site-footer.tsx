@@ -37,7 +37,7 @@ const footerSections: FooterSection[] = [
   {
     title: "Support",
     links: [
-      { href: "#help", label: "Help Center" },
+      { href: "/help", label: "Help Center" },
       { href: "https://x.com/bordful", label: "Twitter/X" },
       { href: "https://www.linkedin.com/company/bordful", label: "LinkedIn" },
       { href: "mailto:support@bordful.com", label: "Contact" },

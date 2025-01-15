@@ -115,7 +115,11 @@ const QuestionItem = React.memo(function QuestionItem({
   );
 });
 
-export function FAQ() {
+interface FAQProps {
+  variant?: "standalone" | "section";
+}
+
+const FAQContent = React.memo(function FAQContent() {
   const [activeCategory, setActiveCategory] =
     React.useState<(typeof CATEGORIES)[number]>("General");
   const [openQuestions, setOpenQuestions] = React.useState<Set<string>>(
@@ -135,43 +139,59 @@ export function FAQ() {
   }, []);
 
   return (
-    <Section id="faq">
-      <Container>
-        <div className="flex flex-col items-center">
-          <SectionHeader
-            title="Frequently Asked Questions"
-            description="Everything you need to know about Bordful. Can't find the answer you're looking for? Reach out to our support team."
-          />
-          <div className="mt-8 flex gap-2">
-            {CATEGORIES.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={cn(
-                  "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
-                  activeCategory === category
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-          <div className="mt-8 w-full max-w-2xl divide-y divide-border/40">
-            {FAQ_ITEMS[
-              activeCategory.toUpperCase() as keyof typeof FAQ_ITEMS
-            ].map((item) => (
-              <QuestionItem
-                key={item.question}
-                {...item}
-                isOpen={openQuestions.has(item.question)}
-                onToggle={() => toggleQuestion(item.question)}
-              />
-            ))}
-          </div>
-        </div>
-      </Container>
-    </Section>
+    <>
+      <div className="mt-8 flex gap-2">
+        {CATEGORIES.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={cn(
+              "rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+              activeCategory === category
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+      <div className="mt-8 w-full max-w-2xl divide-y divide-border/40">
+        {FAQ_ITEMS[activeCategory.toUpperCase() as keyof typeof FAQ_ITEMS].map(
+          (item) => (
+            <QuestionItem
+              key={item.question}
+              {...item}
+              isOpen={openQuestions.has(item.question)}
+              onToggle={() => toggleQuestion(item.question)}
+            />
+          )
+        )}
+      </div>
+    </>
   );
+});
+
+export function FAQ({ variant = "section" }: FAQProps) {
+  const content = (
+    <>
+      <SectionHeader
+        title="Frequently Asked Questions"
+        description="Everything you need to know about Bordful. Can't find the answer you're looking for? Reach out to our support team."
+      />
+      <FAQContent />
+    </>
+  );
+
+  if (variant === "section") {
+    return (
+      <Section id="faq">
+        <Container>
+          <div className="flex flex-col items-center">{content}</div>
+        </Container>
+      </Section>
+    );
+  }
+
+  return <div className="flex flex-col items-center">{content}</div>;
 }
