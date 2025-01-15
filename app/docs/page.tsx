@@ -1,74 +1,33 @@
+import { Metadata } from "next";
+import { Section } from "@/components/ui/section";
+import { Container } from "@/components/ui/container";
+import { SectionHeader } from "@/components/ui/section-header";
+import { Documentation } from "@/components/documentation";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+
+export const metadata: Metadata = {
+  title: "Documentation - Bordful",
+  description:
+    "Learn how to set up, customize, and manage your job board with our comprehensive documentation.",
+};
+
 export default function DocsPage() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="mb-3 text-2xl font-medium tracking-tight sm:text-3xl">
-          Documentation
-        </h1>
-        <p className="text-sm text-muted-foreground text-balance max-w-[750px]">
-          Welcome to the Bordful documentation. Learn how to create and
-          customize your job board.
-        </p>
-      </div>
-
-      <div className="space-y-4">
-        <h2 className="text-xl font-medium tracking-tight">Overview</h2>
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          Bordful is a modern, customizable job board template built with
-          Next.js. This documentation will help you get started with setting up
-          your own job board, customizing its appearance, and managing job
-          listings through Airtable.
-        </p>
-      </div>
-
-      <div className="space-y-4">
-        <h2 className="text-xl font-medium tracking-tight">Getting Started</h2>
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          To get started with Bordful, you&apos;ll need:
-        </p>
-        <ul className="ml-6 list-disc text-sm text-muted-foreground space-y-2">
-          <li>Node.js 18.17 or later</li>
-          <li>A package manager (npm, yarn, or pnpm)</li>
-          <li>An Airtable account</li>
-          <li>Basic knowledge of React and Next.js</li>
-        </ul>
-        <p className="text-sm text-muted-foreground leading-relaxed mt-4">
-          Check out our Quick Start guide to set up your job board in minutes.
-        </p>
-      </div>
-
-      <div className="space-y-4">
-        <h2 className="text-xl font-medium tracking-tight">
-          Documentation Sections
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border p-4">
-            <h3 className="font-medium mb-2">Quick Start</h3>
-            <p className="text-sm text-muted-foreground">
-              Get your job board up and running quickly with our step-by-step
-              guide.
-            </p>
+    <div className="flex min-h-screen flex-col">
+      <Section className="pt-24 md:pt-32">
+        <Container>
+          <div className="mx-auto max-w-[800px]">
+            <Breadcrumbs className="mb-8" />
+            <SectionHeader
+              title="Documentation"
+              description="Everything you need to know about setting up and managing your job board. From installation to customization, we've got you covered."
+            />
+            <div className="mt-16">
+              <Documentation />
+            </div>
           </div>
-          <div className="rounded-lg border p-4">
-            <h3 className="font-medium mb-2">Guides</h3>
-            <p className="text-sm text-muted-foreground">
-              Detailed guides for customizing and extending your job board.
-            </p>
-          </div>
-          <div className="rounded-lg border p-4">
-            <h3 className="font-medium mb-2">API Reference</h3>
-            <p className="text-sm text-muted-foreground">
-              Complete API documentation for integrating with your job board.
-            </p>
-          </div>
-          <div className="rounded-lg border p-4">
-            <h3 className="font-medium mb-2">Examples</h3>
-            <p className="text-sm text-muted-foreground">
-              Real-world examples and code snippets for common use cases.
-            </p>
-          </div>
-        </div>
-      </div>
+        </Container>
+      </Section>
     </div>
   );
 }

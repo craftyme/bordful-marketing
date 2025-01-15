@@ -117,9 +117,20 @@ const QuestionItem = React.memo(function QuestionItem({
 
 interface FAQProps {
   variant?: "standalone" | "section";
+  items?: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
-const FAQContent = React.memo(function FAQContent() {
+const FAQContent = React.memo(function FAQContent({
+  items,
+}: {
+  items?: Array<{
+    question: string;
+    answer: string;
+  }>;
+}) {
   const [activeCategory, setActiveCategory] =
     React.useState<(typeof CATEGORIES)[number]>("General");
   const [openQuestions, setOpenQuestions] = React.useState<Set<string>>(
@@ -137,6 +148,21 @@ const FAQContent = React.memo(function FAQContent() {
       return next;
     });
   }, []);
+
+  if (items) {
+    return (
+      <div className="mt-8 w-full max-w-2xl divide-y divide-border/40">
+        {items.map((item) => (
+          <QuestionItem
+            key={item.question}
+            {...item}
+            isOpen={openQuestions.has(item.question)}
+            onToggle={() => toggleQuestion(item.question)}
+          />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <>
@@ -172,14 +198,14 @@ const FAQContent = React.memo(function FAQContent() {
   );
 });
 
-export function FAQ({ variant = "section" }: FAQProps) {
+export function FAQ({ variant = "section", items }: FAQProps) {
   const content = (
     <>
       <SectionHeader
         title="Frequently Asked Questions"
         description="Everything you need to know about Bordful. Can't find the answer you're looking for? Reach out to our support team."
       />
-      <FAQContent />
+      <FAQContent items={items} />
     </>
   );
 

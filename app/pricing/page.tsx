@@ -1,14 +1,14 @@
 import { Metadata } from "next";
-import { Pricing } from "@/components/pricing";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import { FAQ } from "@/components/faq";
+import { Pricing } from "@/components/pricing";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Pricing - Bordful",
   description:
-    "Choose between our open source version or let us handle the complete setup with our custom installation service.",
+    "Simple, transparent pricing for your job board. Start for free and scale as you grow.",
 };
 
 export default function PricingPage() {
@@ -16,24 +16,15 @@ export default function PricingPage() {
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
-          <div className="mx-auto max-w-2xl">
-            <div className="text-center">
-              <SectionHeader
-                title="Pricing"
-                description="Choose between our open source version or let us handle the complete setup with our custom installation service."
-              />
-            </div>
-            <div className="mt-16">
-              <Pricing variant="standalone" />
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      <Section variant="secondary">
-        <Container>
+          <Breadcrumbs className="mb-8" />
           <div className="mx-auto max-w-[800px]">
-            <FAQ variant="standalone" />
+            <SectionHeader
+              title="Simple, Transparent Pricing"
+              description="Start for free and scale as your job board grows. No hidden fees, no surprises."
+            />
+            <div className="mt-16">
+              <Pricing />
+            </div>
           </div>
         </Container>
       </Section>

@@ -3,6 +3,7 @@ import { UseCases } from "@/components/use-cases";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Use Cases - Bordful",
@@ -15,6 +16,7 @@ export default function UseCasesPage() {
     <main className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
+          <Breadcrumbs className="mb-8" />
           <header className="text-center">
             <SectionHeader
               title="Use Cases"
