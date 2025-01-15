@@ -11,7 +11,7 @@ const linkVariants = cva(
         default: "text-muted-foreground hover:text-foreground",
         nav: "text-[13px] text-muted-foreground hover:text-foreground",
         button:
-          "h-7 rounded-full border border-border bg-background/50 px-3 text-[13px] text-muted-foreground backdrop-blur-md hover:bg-background/80 hover:text-foreground",
+          "h-7 rounded-full border border-border bg-background px-3 text-[13px] text-muted-foreground hover:bg-background hover:text-foreground",
         primary:
           "h-7 rounded-full bg-foreground px-4 text-[13px] font-medium text-background hover:bg-foreground/90",
       },
