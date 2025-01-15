@@ -12,10 +12,12 @@ interface UseCase {
   description: string;
   category: Category;
   href: string;
+  id: string;
 }
 
-const useCases: UseCase[] = [
+const USE_CASES: UseCase[] = [
   {
+    id: "country-spain",
     category: CATEGORIES.COUNTRY,
     title: "Start a Job Board in Spain",
     description:
@@ -23,6 +25,7 @@ const useCases: UseCase[] = [
     href: "#country",
   },
   {
+    id: "city-alicante",
     category: CATEGORIES.CITY,
     title: "Start a Local Job Board in Alicante",
     description:
@@ -30,6 +33,7 @@ const useCases: UseCase[] = [
     href: "#city",
   },
   {
+    id: "industry-manufacturing",
     category: CATEGORIES.INDUSTRY,
     title: "Start Manufacturing Job Board",
     description:
@@ -37,6 +41,7 @@ const useCases: UseCase[] = [
     href: "#industry",
   },
   {
+    id: "role-truck-drivers",
     category: CATEGORIES.ROLE,
     title: "Start a Job Board for Truck Drivers",
     description:
@@ -44,6 +49,7 @@ const useCases: UseCase[] = [
     href: "#role",
   },
   {
+    id: "technology-nextjs",
     category: CATEGORIES.TECHNOLOGY,
     title: "Start Next.js Job Board",
     description:
@@ -51,13 +57,20 @@ const useCases: UseCase[] = [
     href: "#technology",
   },
   {
+    id: "remote-jobs",
     category: CATEGORIES.REMOTE,
     title: "Start Remote Jobs Board",
     description:
       "Build remote-first job boards that connect distributed teams with global talent, featuring location-independent opportunities and remote work tools.",
     href: "#remote",
   },
-];
+] as const;
+
+const SECTION_CONTENT = {
+  title: "Launch Your Niche Job Board",
+  description:
+    "Create specialized job boards for any market, location, or industry. Bordful helps you target specific niches for maximum impact.",
+} as const;
 
 const UseCaseCard = React.memo(function UseCaseCard({
   title,
@@ -79,24 +92,34 @@ const UseCaseCard = React.memo(function UseCaseCard({
   );
 });
 
-export function UseCases() {
+type UseCasesVariant = "default" | "standalone";
+
+interface UseCasesProps {
+  variant?: UseCasesVariant;
+  className?: string;
+}
+
+export function UseCases({ variant = "default", className }: UseCasesProps) {
+  const content = (
+    <GridLayout className={className}>
+      {USE_CASES.map((useCase) => (
+        <UseCaseCard key={useCase.id} {...useCase} />
+      ))}
+    </GridLayout>
+  );
+
+  if (variant === "standalone") {
+    return content;
+  }
+
   return (
     <Section id="use-cases">
       <Container>
         <SectionHeader
-          title="Launch Your Niche Job Board"
-          description="Create specialized job boards for any market, location, or industry. Bordful helps you target specific niches for maximum impact."
+          title={SECTION_CONTENT.title}
+          description={SECTION_CONTENT.description}
         />
-        <GridLayout>
-          {useCases.map((useCase) => (
-            <UseCaseCard
-              key={`${useCase.category}-${useCase.title
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              {...useCase}
-            />
-          ))}
-        </GridLayout>
+        {content}
       </Container>
     </Section>
   );

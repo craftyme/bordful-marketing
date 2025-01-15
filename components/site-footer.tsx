@@ -21,8 +21,9 @@ const footerSections: FooterSection[] = [
     links: [
       { href: "/features", label: "Features" },
       { href: "/pricing", label: "Pricing" },
-      { href: "#use-cases", label: "Use Cases" },
       { href: "/docs/integrations", label: "Integrations" },
+
+      { href: "https://demo.bordful.com/changelog", label: "Changelog" },
     ],
   },
   {
@@ -30,8 +31,8 @@ const footerSections: FooterSection[] = [
     links: [
       { href: "/showcase", label: "Showcase" },
       { href: "/docs", label: "Documentation" },
+      { href: "/use-cases", label: "Use Cases" },
       { href: "/blog", label: "Blog" },
-      { href: "https://demo.bordful.com/changelog", label: "Changelog" },
     ],
   },
   {
@@ -39,8 +40,8 @@ const footerSections: FooterSection[] = [
     links: [
       { href: "/help", label: "Help Center" },
       { href: "https://x.com/bordful", label: "Twitter/X" },
-      { href: "https://www.linkedin.com/company/bordful", label: "LinkedIn" },
       { href: "mailto:support@bordful.com", label: "Contact" },
+      { href: "/faq", label: "FAQ" },
     ],
   },
   {

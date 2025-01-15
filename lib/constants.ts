@@ -13,9 +13,10 @@ export const navConfig = {
   mainNav: [
     { href: "/features", label: "Features" },
     { href: "/pricing", label: "Pricing" },
-    { href: "#use-cases", label: "Use Cases" },
-    { href: "/docs", label: "Docs" },
     { href: "/showcase", label: "Showcase" },
+    { href: "/docs", label: "Docs" },
+    { href: "/use-cases", label: "Use Cases" },
     { href: "/blog", label: "Blog" },
+    { href: "/help", label: "Help Center" },
   ],
 } as const;
