@@ -4,16 +4,13 @@ import { TableOfContents } from "@/components/table-of-contents";
 import { ArticleLayout } from "@/components/article-layout";
 import { extractHeadings } from "@/lib/mdx";
 
-interface IntegrationPageProps {
-  params: {
-    slug: string;
-  };
-}
-
 export default async function IntegrationPage({
   params,
-}: IntegrationPageProps) {
-  const doc = getDocBySlug(`integrations/${params.slug}`);
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const doc = getDocBySlug(`integrations/${resolvedParams.slug}`);
 
   if (!doc) {
     notFound();
