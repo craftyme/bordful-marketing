@@ -4,7 +4,7 @@ import { USE_CASES } from "@/lib/use-cases";
 import { UseCasePage as UseCasePageComponent } from "@/components/use-case-page";
 import Script from "next/script";
 
-interface UseCasePageProps {
+interface PageProps {
   params: {
     slug: string;
   };
@@ -16,7 +16,7 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: UseCasePageProps): Metadata {
+export function generateMetadata({ params }: PageProps): Metadata {
   const useCase = USE_CASES[params.slug];
 
   if (!useCase) {
@@ -40,7 +40,7 @@ export function generateMetadata({ params }: UseCasePageProps): Metadata {
   };
 }
 
-export default function UseCasePage({ params }: UseCasePageProps) {
+export default async function UseCasePage({ params }: PageProps) {
   const useCase = USE_CASES[params.slug];
 
   if (!useCase) {
