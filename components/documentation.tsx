@@ -1,7 +1,4 @@
 import * as React from "react";
-import { Section } from "./ui/section";
-import { Container } from "./ui/container";
-import { SectionHeader } from "./ui/section-header";
 import { CustomLink } from "./ui/link";
 import { Badge } from "./ui/badge";
 
@@ -79,25 +76,10 @@ const DocCard = React.memo(function DocCard({
 
 export function Documentation() {
   return (
-    <Section id="docs">
-      <Container>
-        <div className="flex flex-col items-center">
-          <SectionHeader
-            title="Documentation"
-            description="Everything you need to know about Bordful. From quick start to advanced customization, our docs have you covered."
-          />
-          <div className="mt-8">
-            <CustomLink href="/docs" variant="button">
-              Browse All Docs
-            </CustomLink>
-          </div>
-        </div>
-        <div className="mt-12 grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {Object.values(DOCS).map((doc) => (
-            <DocCard key={doc.href} {...doc} />
-          ))}
-        </div>
-      </Container>
-    </Section>
+    <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {Object.values(DOCS).map((doc) => (
+        <DocCard key={doc.href} {...doc} />
+      ))}
+    </div>
   );
 }

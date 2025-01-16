@@ -45,27 +45,29 @@ export default async function BlogPost({
   }
 
   const headings = extractHeadings(post.content);
-  const showTableOfContents = headings.length >= 3; // Only show for posts with 3 or more headings
+  const showTableOfContents = headings.length >= 2;
 
   return (
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
-          <Breadcrumbs
-            className="mb-8"
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
-              { label: post.title, href: `/blog/${post.slug}` },
-            ]}
-          />
           <div className="mx-auto flex max-w-[calc(42rem+16rem+2.5rem)] gap-10">
             <div className="flex-1 max-w-2xl">
+              <div className="flex justify-start">
+                <Breadcrumbs
+                  className="mb-4"
+                  items={[
+                    { label: "Home", href: "/" },
+                    { label: "Blog", href: "/blog" },
+                    { label: post.title, href: `/blog/${post.slug}` },
+                  ]}
+                />
+              </div>
               <ArticleLayout
                 title={post.title}
                 description={post.description}
                 content={post.content}
-                date={post.date}
+                headerClassName="space-y-6"
               >
                 <div className="text-xs text-muted-foreground">
                   By {post.author} •{" "}

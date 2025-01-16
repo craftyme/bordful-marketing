@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Badge } from "@/components/ui/badge";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/mdx-components";
@@ -11,10 +10,6 @@ interface ArticleLayoutProps {
   description: string;
   date?: string;
   content: string;
-  badge?: {
-    text: string;
-    className?: string;
-  };
   headerClassName?: string;
   children?: React.ReactNode;
 }
@@ -24,37 +19,24 @@ export function ArticleLayout({
   description,
   date,
   content,
-  badge,
   headerClassName,
   children,
 }: ArticleLayoutProps) {
   return (
     <div className="space-y-8">
       <div className={cn("space-y-4", headerClassName)}>
-        <div className="flex items-center gap-2">
-          {badge && (
-            <>
-              <Badge className={cn("text-muted-foreground", badge.className)}>
-                {badge.text}
-              </Badge>
-              {date && (
-                <>
-                  <span className="text-xs text-muted-foreground">•</span>
-                  <time className="text-xs text-muted-foreground">
-                    {formatDate(date)}
-                  </time>
-                </>
-              )}
-            </>
-          )}
-        </div>
         <div>
           <h1 className="mb-3 text-2xl font-medium tracking-tight sm:text-3xl">
             {title}
           </h1>
-          <p className="text-sm text-muted-foreground text-balance max-w-[750px]">
+          <p className="mb-2 text-sm text-muted-foreground text-balance max-w-[750px]">
             {description}
           </p>
+          {date && (
+            <time className="text-xs text-muted-foreground">
+              {formatDate(date)}
+            </time>
+          )}
         </div>
       </div>
 

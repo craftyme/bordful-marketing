@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-import { Section } from "@/components/ui/section";
-import { Container } from "@/components/ui/container";
-import { SectionHeader } from "@/components/ui/section-header";
+import { ArticleLayout } from "@/components/article-layout";
 import { Documentation } from "@/components/documentation";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
@@ -13,21 +11,17 @@ export const metadata: Metadata = {
 
 export default function DocsPage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <Section className="pt-24 md:pt-32">
-        <Container>
-          <div className="mx-auto max-w-[800px]">
-            <Breadcrumbs className="mb-8" />
-            <SectionHeader
-              title="Documentation"
-              description="Everything you need to know about setting up and managing your job board. From installation to customization, we've got you covered."
-            />
-            <div className="mt-16">
-              <Documentation />
-            </div>
-          </div>
-        </Container>
-      </Section>
+    <div className="relative w-full min-w-0">
+      <div className="flex justify-start">
+        <Breadcrumbs className="mb-4" />
+      </div>
+      <ArticleLayout
+        title="Documentation"
+        description="Everything you need to know about setting up and managing your job board. From installation to customization, we've got you covered."
+        content=""
+      >
+        <Documentation />
+      </ArticleLayout>
     </div>
   );
 }
