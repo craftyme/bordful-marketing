@@ -4,20 +4,19 @@ import { USE_CASES } from "@/lib/use-cases";
 import { UseCasePage as UseCasePageComponent } from "@/components/use-case-page";
 import Script from "next/script";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
 export function generateStaticParams() {
   return Object.keys(USE_CASES).map((slug) => ({
     slug,
   }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const useCase = USE_CASES[params.slug];
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const useCase = USE_CASES[resolvedParams.slug];
 
   if (!useCase) {
     return {};
@@ -40,8 +39,13 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default async function UseCasePage({ params }: PageProps) {
-  const useCase = USE_CASES[params.slug];
+export default async function UseCasePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const useCase = USE_CASES[resolvedParams.slug];
 
   if (!useCase) {
     notFound();
