@@ -29,6 +29,9 @@ const LABEL_MAP: Record<string, string> = {
   blog: "Blog",
   about: "About",
   contact: "Contact",
+  faq: "FAQ",
+  terms: "Terms of Service",
+  privacy: "Privacy Policy",
 };
 
 // Helper function to format segment

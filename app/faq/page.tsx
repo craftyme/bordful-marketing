@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { FAQ } from "@/components/faq";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "FAQ - Bordful",
@@ -14,6 +15,7 @@ export default function FAQPage() {
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
+          <Breadcrumbs className="mb-8" />
           <div className="mx-auto max-w-[800px]">
             <FAQ variant="standalone" />
           </div>

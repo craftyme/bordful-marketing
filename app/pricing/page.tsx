@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
-import { SectionHeader } from "@/components/ui/section-header";
 import { Pricing } from "@/components/pricing";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { SectionHeader } from "@/components/ui/section-header";
 
 export const metadata: Metadata = {
   title: "Pricing - Bordful",
@@ -23,7 +23,7 @@ export default function PricingPage() {
               description="Start for free and scale as your job board grows. No hidden fees, no surprises."
             />
             <div className="mt-16">
-              <Pricing />
+              <Pricing variant="standalone" />
             </div>
           </div>
         </Container>

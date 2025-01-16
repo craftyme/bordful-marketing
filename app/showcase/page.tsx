@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Showcase } from "@/components/showcase";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Showcase - Bordful",
@@ -15,6 +16,7 @@ export default function ShowcasePage() {
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
+          <Breadcrumbs className="mb-8" />
           <div className="mx-auto max-w-[1200px]">
             <div className="text-center">
               <SectionHeader

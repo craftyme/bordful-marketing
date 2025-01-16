@@ -1,12 +1,14 @@
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export default function PrivacyPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
+          <Breadcrumbs className="mb-8" />
           <div className="mx-auto max-w-2xl">
             <div className="text-center">
               <SectionHeader
