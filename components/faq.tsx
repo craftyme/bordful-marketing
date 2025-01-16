@@ -78,7 +78,7 @@ const QuestionItem = React.memo(function QuestionItem({
   onToggle,
 }: QuestionItemProps) {
   return (
-    <div className="border-b border-border/40">
+    <div>
       <button
         onClick={onToggle}
         className="flex w-full items-center justify-between py-4 text-left"
@@ -151,15 +151,17 @@ const FAQContent = React.memo(function FAQContent({
 
   if (items) {
     return (
-      <div className="mt-8 w-full max-w-2xl divide-y divide-border/40">
-        {items.map((item) => (
-          <QuestionItem
-            key={item.question}
-            {...item}
-            isOpen={openQuestions.has(item.question)}
-            onToggle={() => toggleQuestion(item.question)}
-          />
-        ))}
+      <div className="mt-8 w-full max-w-2xl">
+        <div className="divide-y divide-border/40">
+          {items.map((item) => (
+            <QuestionItem
+              key={item.question}
+              {...item}
+              isOpen={openQuestions.has(item.question)}
+              onToggle={() => toggleQuestion(item.question)}
+            />
+          ))}
+        </div>
       </div>
     );
   }
@@ -182,17 +184,19 @@ const FAQContent = React.memo(function FAQContent({
           </button>
         ))}
       </div>
-      <div className="mt-8 w-full max-w-2xl divide-y divide-border/40">
-        {FAQ_ITEMS[activeCategory.toUpperCase() as keyof typeof FAQ_ITEMS].map(
-          (item) => (
+      <div className="mt-8 w-full max-w-2xl">
+        <div className="divide-y divide-border/40">
+          {FAQ_ITEMS[
+            activeCategory.toUpperCase() as keyof typeof FAQ_ITEMS
+          ].map((item) => (
             <QuestionItem
               key={item.question}
               {...item}
               isOpen={openQuestions.has(item.question)}
               onToggle={() => toggleQuestion(item.question)}
             />
-          )
-        )}
+          ))}
+        </div>
       </div>
     </>
   );
