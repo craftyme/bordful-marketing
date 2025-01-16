@@ -20,7 +20,7 @@ interface BreadcrumbsProps {
   className?: string;
 }
 
-// Map of URL segments to properly formatted labels
+// Move LABEL_MAP outside to prevent recreation on renders
 const LABEL_MAP: Record<string, string> = {
   "use-cases": "Use Cases",
   help: "Help Center",
@@ -31,8 +31,24 @@ const LABEL_MAP: Record<string, string> = {
   contact: "Contact",
 };
 
+// Helper function to format segment
+const formatSegment = (segment: string): string => {
+  return (
+    LABEL_MAP[segment] ||
+    segment
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
+  );
+};
+
 export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   const pathname = usePathname();
+
+  // Basic error handling for invalid pathname
+  if (!pathname) {
+    return null;
+  }
 
   // If no items provided, generate from pathname
   const breadcrumbs =
@@ -42,13 +58,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
       .filter(Boolean)
       .map((segment, index, array) => {
         const href = `/${array.slice(0, index + 1).join("/")}`;
-        // Use the mapped label if available, otherwise format the segment
-        const label =
-          LABEL_MAP[segment] ||
-          segment
-            .split("-")
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(" ");
+        const label = formatSegment(segment);
         return { label, href };
       });
 
@@ -57,12 +67,15 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
     breadcrumbs.unshift({ label: "Home", href: "/" });
   }
 
+  // Limit breadcrumbs to prevent extremely long trails
+  const limitedBreadcrumbs = breadcrumbs.slice(0, 5);
+
   // Generate JSON-LD schema
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "@id": `https://bordful.com${pathname}#breadcrumb`,
-    itemListElement: breadcrumbs.map((item, index) => ({
+    itemListElement: limitedBreadcrumbs.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       item: {
@@ -79,22 +92,30 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Breadcrumb className={className}>
-        <BreadcrumbList>
-          {breadcrumbs.map((item, index) => (
-            <React.Fragment key={item.href}>
-              <BreadcrumbItem>
-                {index === breadcrumbs.length - 1 ? (
-                  <BreadcrumbPage>{item.label}</BreadcrumbPage>
-                ) : (
-                  <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+      <nav aria-label="Breadcrumb navigation">
+        <Breadcrumb className={className}>
+          <BreadcrumbList>
+            {limitedBreadcrumbs.map((item, index) => (
+              <React.Fragment key={item.href}>
+                <BreadcrumbItem>
+                  {index === limitedBreadcrumbs.length - 1 ? (
+                    <BreadcrumbPage aria-current="page">
+                      {item.label}
+                    </BreadcrumbPage>
+                  ) : (
+                    <BreadcrumbLink href={item.href}>
+                      {item.label}
+                    </BreadcrumbLink>
+                  )}
+                </BreadcrumbItem>
+                {index < limitedBreadcrumbs.length - 1 && (
+                  <BreadcrumbSeparator />
                 )}
-              </BreadcrumbItem>
-              {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-            </React.Fragment>
-          ))}
-        </BreadcrumbList>
-      </Breadcrumb>
+              </React.Fragment>
+            ))}
+          </BreadcrumbList>
+        </Breadcrumb>
+      </nav>
     </>
   );
 }

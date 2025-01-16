@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { BlogCard } from "@/components/blog";
 import { getAllPosts } from "@/lib/blog";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export const metadata = {
   title: "Blog - Bordful",
@@ -18,6 +19,7 @@ export default function BlogPage() {
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
+          <Breadcrumbs className="mb-8" />
           <div className="mx-auto max-w-4xl">
             <div className="text-center">
               <SectionHeader

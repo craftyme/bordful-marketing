@@ -8,6 +8,7 @@ import { Metadata } from "next";
 import { ArticleLayout } from "@/components/article-layout";
 import { TableOfContents } from "@/components/table-of-contents";
 import { extractHeadings } from "@/lib/mdx";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -50,6 +51,14 @@ export default async function BlogPost({
     <div className="flex min-h-screen flex-col">
       <Section className="pt-24 md:pt-32">
         <Container>
+          <Breadcrumbs
+            className="mb-8"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Blog", href: "/blog" },
+              { label: post.title, href: `/blog/${post.slug}` },
+            ]}
+          />
           <div className="mx-auto flex max-w-[calc(42rem+16rem+2.5rem)] gap-10">
             <div className="flex-1 max-w-2xl">
               <ArticleLayout
@@ -57,12 +66,14 @@ export default async function BlogPost({
                 description={post.description}
                 content={post.content}
                 date={post.date}
-                badge={{
-                  text: "Blog Post",
-                }}
               >
                 <div className="text-xs text-muted-foreground">
-                  By {post.author}
+                  By {post.author} •{" "}
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
                 </div>
               </ArticleLayout>
 
