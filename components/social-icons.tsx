@@ -9,6 +9,11 @@ const socialLinks = [
     label: "X (Twitter)",
   },
   {
+    href: siteConfig.links.bluesky,
+    icon: "/images/logos/bluesky.svg",
+    label: "Bluesky",
+  },
+  {
     href: siteConfig.links.linkedin,
     icon: "/images/logos/linkedin.svg",
     label: "LinkedIn",

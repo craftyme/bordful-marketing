@@ -6,6 +6,7 @@ export const siteConfig = {
     github: "https://github.com/tomaslau/bordful",
     twitter: "https://twitter.com/bordful",
     linkedin: "https://linkedin.com/company/bordful",
+    bluesky: "https://bsky.app/profile/bordful.com",
   },
 } as const;
 
