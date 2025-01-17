@@ -30,7 +30,7 @@ const USE_CASES: UseCase[] = [
     title: "Start a Local Job Board in Alicante",
     description:
       "Create hyper-local job boards that serve specific cities and communities, fostering stronger connections between local businesses and talent.",
-    href: "#city",
+    href: "/use-cases/city",
   },
   {
     id: "industry-manufacturing",
@@ -38,7 +38,7 @@ const USE_CASES: UseCase[] = [
     title: "Start Manufacturing Job Board",
     description:
       "Build industry-focused job boards that cater to specific sectors, offering specialized features and categories relevant to your chosen industry.",
-    href: "#industry",
+    href: "/use-cases/industry",
   },
   {
     id: "role-truck-drivers",
@@ -46,7 +46,7 @@ const USE_CASES: UseCase[] = [
     title: "Start a Job Board for Truck Drivers",
     description:
       "Launch role-specific job boards that connect specialized professionals with employers, featuring targeted job categories and requirements.",
-    href: "#role",
+    href: "/use-cases/role",
   },
   {
     id: "technology-nextjs",
@@ -54,7 +54,7 @@ const USE_CASES: UseCase[] = [
     title: "Start Next.js Job Board",
     description:
       "Create technology-focused job boards that serve specific tech communities, with features tailored to technical recruitment and skill verification.",
-    href: "#technology",
+    href: "/use-cases/technology",
   },
   {
     id: "remote-jobs",
@@ -62,7 +62,7 @@ const USE_CASES: UseCase[] = [
     title: "Start Remote Jobs Board",
     description:
       "Build remote-first job boards that connect distributed teams with global talent, featuring location-independent opportunities and remote work tools.",
-    href: "#remote",
+    href: "/use-cases/remote",
   },
 ] as const;
 
