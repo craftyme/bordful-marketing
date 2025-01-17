@@ -112,7 +112,7 @@ export default function CountryJobBoardPage() {
       badge="Country-Specific Job Board"
       title="Launch Your Job Board"
       titleSuffix="for Your Country"
-      description="Create a localized job board that connects talent with opportunities in your target country. Built-in support for local languages, currencies, and regional requirements."
+      description="Create a localized job board that connecting talent with opportunities in your target country."
       metrics={metrics}
       benefits={benefits}
       features={features}
