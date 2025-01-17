@@ -22,7 +22,7 @@ const USE_CASES: UseCase[] = [
     title: "Start a Job Board in Spain",
     description:
       "Target country-specific job markets with localized features, language support, and regional job categories to connect local talent with opportunities.",
-    href: "#country",
+    href: "/use-cases/country",
   },
   {
     id: "city-alicante",
