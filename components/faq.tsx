@@ -121,6 +121,11 @@ interface FAQProps {
     question: string;
     answer: string;
   }>;
+  showTitle?: boolean;
+  title?: string;
+  description?: string;
+  background?: "default" | "secondary";
+  className?: string;
 }
 
 const FAQContent = React.memo(function FAQContent({
@@ -151,7 +156,7 @@ const FAQContent = React.memo(function FAQContent({
 
   if (items) {
     return (
-      <div className="mt-8 w-full max-w-2xl">
+      <div className="mt-8 w-full max-w-2xl mx-auto">
         <div className="divide-y divide-border/40">
           {items.map((item) => (
             <QuestionItem
@@ -167,7 +172,7 @@ const FAQContent = React.memo(function FAQContent({
   }
 
   return (
-    <>
+    <div className="flex flex-col items-center w-full">
       <div className="mt-8 flex gap-2">
         {CATEGORIES.map((category) => (
           <button
@@ -198,30 +203,33 @@ const FAQContent = React.memo(function FAQContent({
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 });
 
-export function FAQ({ variant = "section", items }: FAQProps) {
+export function FAQ({
+  variant = "section",
+  items,
+  showTitle = true,
+  title = "Frequently Asked Questions",
+  description = "Find answers to common questions about using Bordful for your job board.",
+  background = "secondary",
+  className,
+}: FAQProps) {
   const content = (
     <>
-      <SectionHeader
-        title="Frequently Asked Questions"
-        description="Everything you need to know about Bordful. Can't find the answer you're looking for? Reach out to our support team."
-      />
+      {showTitle && <SectionHeader title={title} description={description} />}
       <FAQContent items={items} />
     </>
   );
 
-  if (variant === "section") {
-    return (
-      <Section id="faq">
-        <Container>
-          <div className="flex flex-col items-center">{content}</div>
-        </Container>
-      </Section>
-    );
+  if (variant === "standalone") {
+    return <div className={cn("w-full", className)}>{content}</div>;
   }
 
-  return <div className="flex flex-col items-center">{content}</div>;
+  return (
+    <Section variant={background}>
+      <Container className={className}>{content}</Container>
+    </Section>
+  );
 }

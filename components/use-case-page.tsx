@@ -30,7 +30,6 @@ interface UseCasePageProps {
     question: string;
     answer: string;
   }>;
-  ctaDescription: string;
 }
 
 export function UseCasePage({
@@ -42,7 +41,6 @@ export function UseCasePage({
   benefits,
   features,
   faqs,
-  ctaDescription,
 }: UseCasePageProps) {
   return (
     <div className="flex min-h-screen flex-col">
@@ -129,13 +127,11 @@ export function UseCasePage({
       {/* FAQ Section */}
       <Section>
         <Container>
-          <div className="flex flex-col items-center">
-            <SectionHeader
-              title="Frequently Asked Questions"
-              description={ctaDescription}
-            />
-            <FAQ items={faqs} variant="standalone" />
-          </div>
+          <SectionHeader
+            title="Frequently Asked Questions"
+            description="Everything you need to know about launching your specialized job board."
+          />
+          <FAQ items={faqs} variant="standalone" showTitle={false} />
         </Container>
       </Section>
 
