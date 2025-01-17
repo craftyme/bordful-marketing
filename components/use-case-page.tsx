@@ -30,6 +30,7 @@ interface UseCasePageProps {
     question: string;
     answer: string;
   }>;
+  ctaDescription: string;
 }
 
 export function UseCasePage({
@@ -41,6 +42,7 @@ export function UseCasePage({
   benefits,
   features,
   faqs,
+  ctaDescription,
 }: UseCasePageProps) {
   return (
     <div className="flex min-h-screen flex-col">
@@ -141,7 +143,7 @@ export function UseCasePage({
           <div className="mx-auto max-w-[600px] text-center">
             <SectionHeader
               title={`Ready to Launch Your ${badge}?`}
-              description="Join successful job boards built with Bordful. Start connecting talent with opportunities today."
+              description={ctaDescription}
             />
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <CustomLink
