@@ -27,9 +27,9 @@ const USE_CASES: UseCase[] = [
   {
     id: "city-alicante",
     category: CATEGORIES.CITY,
-    title: "Start a Local Job Board in Alicante",
+    title: "Start a Job Board in New York",
     description:
-      "Create hyper-local job boards that serve specific cities and communities, fostering stronger connections between local businesses and talent.",
+      "Create a hyper-local job board for New York City with borough-specific features, MTA integration, and local business networks. Connect talent across all five boroughs.",
     href: "/use-cases/city",
   },
   {
