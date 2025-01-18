@@ -1,14 +1,24 @@
 import { navConfig } from "@/lib/constants";
 import { CustomLink } from "./ui/link";
+import { UseCasesNav } from "./use-cases-nav";
 
 export function NavLinks() {
   return (
-    <nav className="hidden gap-4 sm:gap-6 lg:flex">
-      {navConfig.mainNav.map((link) => (
-        <CustomLink key={link.href} href={link.href} variant="nav">
-          {link.label}
-        </CustomLink>
-      ))}
+    <nav className="flex items-center gap-6">
+      {navConfig.mainNav.map((item) => {
+        if (item.label === "Use Cases") {
+          return <UseCasesNav key={item.href} />;
+        }
+        return (
+          <CustomLink
+            key={item.href}
+            href={item.href}
+            className="text-[13px] text-muted-foreground hover:text-foreground"
+          >
+            {item.label}
+          </CustomLink>
+        );
+      })}
     </nav>
   );
 }
