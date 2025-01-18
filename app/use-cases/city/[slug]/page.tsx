@@ -27,11 +27,11 @@ const CITIES = {
   },
 };
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: { slug: CitySlug };
-}): Metadata {
+}): Promise<Metadata> {
   const city = CITIES[params.slug];
 
   return {
@@ -54,13 +54,13 @@ export function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return Object.keys(CITIES).map((slug) => ({
     slug,
   }));
 }
 
-export default function CitySpecificPage({
+export default async function CitySpecificPage({
   params,
 }: {
   params: { slug: CitySlug };
