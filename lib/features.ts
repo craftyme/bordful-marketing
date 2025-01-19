@@ -17,7 +17,7 @@ export const CORE_FEATURES = {
   },
   userInterface: {
     title: "Modern UI Components",
-    description: "Built with Next.js 14 and Tailwind CSS",
+    description: "Built with Next.js and Tailwind CSS",
     capabilities: [
       "Responsive design",
       "Dark mode support",
@@ -59,7 +59,7 @@ export const CORE_FEATURES = {
 
 export const CORE_INTEGRATIONS = {
   database: ["Airtable"],
-  framework: ["Next.js 14", "React", "TypeScript"],
+  framework: ["Next.js", "React", "TypeScript"],
   styling: ["Tailwind CSS", "Geist font"],
   tooling: ["ESLint", "PostCSS"],
 } as const;
@@ -83,7 +83,7 @@ export const CORE_BENEFITS = [
   {
     title: "Modern Stack",
     description:
-      "Built with Next.js 14, TypeScript, and Tailwind CSS for a modern development experience",
+      "Built with Next.js, TypeScript, and Tailwind CSS for a modern development experience",
   },
   {
     title: "Responsive Design",
@@ -106,7 +106,7 @@ export const CORE_FAQS = [
   {
     question: "What tech stack does Bordful use?",
     answer:
-      "Bordful is built with Next.js 14, TypeScript, and Tailwind CSS. It uses Airtable as the database and includes modern UI components with responsive design.",
+      "Bordful is built with Next.js, TypeScript, and Tailwind CSS. It uses Airtable as the database and includes modern UI components with responsive design.",
   },
   {
     question: "How do I customize the job board?",

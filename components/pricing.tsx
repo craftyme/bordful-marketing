@@ -29,7 +29,7 @@ const plans: Plan[] = [
     price: "Free",
     description: "For developers and hobbyists",
     features: [
-      "Next.js 15 codebase",
+      "Next.js codebase",
       "Basic job board features",
       "Self-hosted solution",
       "MIT license",

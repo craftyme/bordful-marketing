@@ -4,7 +4,7 @@ The marketing website for Bordful - a modern, customizable job board template bu
 
 ## Tech Stack
 
-- [Next.js 14](https://nextjs.org/) - React framework
+- [Next.js](https://nextjs.org/) - React framework
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
 - [Tailwind CSS](https://tailwindcss.com/) - Styling
 - [Shadcn/ui](https://ui.shadcn.com/) - UI components

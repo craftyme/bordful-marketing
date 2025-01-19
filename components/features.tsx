@@ -10,7 +10,7 @@ const features = [
   {
     title: "Modern Stack",
     description:
-      "Built with Next.js 14, TypeScript, and Tailwind CSS for a modern development experience.",
+      "Built with Next.js, TypeScript, and Tailwind CSS for a modern development experience.",
   },
   {
     title: "Responsive Design",
