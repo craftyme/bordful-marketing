@@ -36,6 +36,10 @@ const items = [
         href: "/style-guide#badges",
       },
       {
+        title: "Breadcrumbs",
+        href: "/style-guide#breadcrumbs",
+      },
+      {
         title: "Buttons & Links",
         href: "/style-guide#buttons-links",
       },

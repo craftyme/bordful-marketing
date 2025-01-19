@@ -342,6 +342,31 @@ export default function StyleGuidePage() {
             </div>
           </div>
 
+          {/* Breadcrumbs */}
+          <div id="breadcrumbs" className="space-y-4">
+            <h2 className="text-xl font-medium">Breadcrumbs</h2>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  Default Breadcrumbs
+                </p>
+                <Breadcrumbs
+                  items={[
+                    { label: "Home", href: "/" },
+                    { label: "Style Guide", href: "/style-guide" },
+                    { label: "Components", href: "/style-guide#components" },
+                  ]}
+                />
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  Auto-generated from Path
+                </p>
+                <Breadcrumbs />
+              </div>
+            </div>
+          </div>
+
           {/* Buttons & Links */}
           <div id="buttons-links" className="space-y-4">
             <h2 className="text-xl font-medium">Buttons & Links</h2>
