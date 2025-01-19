@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/lib/constants";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -11,8 +12,40 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Bordful - Job Board Starter Template",
-  description: "A modern, customizable job board template built with Next.js",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: ["job board", "next.js", "react", "typescript", "tailwindcss"],
+  authors: [
+    {
+      name: "Tomas Laurinavicius",
+      url: "https://github.com/tomaslau",
+    },
+  ],
+  creator: "Tomas Laurinavicius",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://bordful.com",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    creator: "@bordful",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  metadataBase: new URL("https://bordful.com"),
 };
 
 export default function RootLayout({

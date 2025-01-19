@@ -29,7 +29,7 @@ const showcaseItems: ShowcaseItem[] = [
     title: "GrowthJobs.org",
     description:
       "The leading job board for growth marketing roles. Find or post jobs in growth, marketing, and digital marketing.",
-    href: "https://growthjobs.org",
+    href: "https://growth.demo.bordful.com",
     category: CATEGORIES.ROLE,
     jobs: [
       {
@@ -50,34 +50,10 @@ const showcaseItems: ShowcaseItem[] = [
     ],
   },
   {
-    title: "Python Jobs",
-    description:
-      "A specialized job board connecting Python developers with companies. From Django to Flask, find your next Python role.",
-    href: "https://pythonjobs.demo.bordful.com",
-    category: CATEGORIES.TECHNOLOGY,
-    jobs: [
-      {
-        role: "Senior Python Developer",
-        company: "CloudTech",
-        location: "Remote",
-      },
-      {
-        role: "Django Backend Engineer",
-        company: "WebFlow",
-        location: "Berlin",
-      },
-      {
-        role: "Python Team Lead",
-        company: "DataCo",
-        location: "Amsterdam",
-      },
-    ],
-  },
-  {
-    title: "Tech Jobs in Spain",
+    title: "TechJobs Spain",
     description:
       "The largest tech job board in Spain. Find software development, design, and tech roles across Spanish cities.",
-    href: "https://techjobs.es",
+    href: "https://spain.demo.bordful.com",
     category: CATEGORIES.COUNTRY,
     jobs: [
       {
@@ -94,6 +70,30 @@ const showcaseItems: ShowcaseItem[] = [
         role: "Full Stack Developer",
         company: "CodeLab",
         location: "Valencia",
+      },
+    ],
+  },
+  {
+    title: "RemoteML",
+    description:
+      "Remote jobs in machine learning, AI, and data science. Connect with leading companies in the AI space.",
+    href: "https://ml.demo.bordful.com",
+    category: CATEGORIES.REMOTE,
+    jobs: [
+      {
+        role: "ML Engineer",
+        company: "AI Labs",
+        location: "Remote",
+      },
+      {
+        role: "Data Scientist",
+        company: "DataCo",
+        location: "Remote",
+      },
+      {
+        role: "AI Researcher",
+        company: "DeepTech",
+        location: "Remote",
       },
     ],
   },
