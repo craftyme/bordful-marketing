@@ -8,7 +8,7 @@ const HeroContent = React.memo(function HeroContent() {
   return (
     <Container>
       <div className="mb-6">
-        <Badge className="text-muted-foreground">
+        <Badge variant="outline" className="text-muted-foreground">
           Open Source Job Board Software
         </Badge>
       </div>
