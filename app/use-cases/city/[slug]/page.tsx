@@ -8,9 +8,7 @@ import {
 } from "@/lib/features";
 
 interface PageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
 // Add static params generation for key cities
@@ -33,7 +31,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const cityName = params.slug
+  const resolvedParams = await params;
+  const cityName = resolvedParams.slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -66,8 +65,9 @@ export async function generateMetadata({
   };
 }
 
-export default function CityJobBoardPage({ params }: PageProps) {
-  const cityName = params.slug
+export default async function CityJobBoardPage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const cityName = resolvedParams.slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
