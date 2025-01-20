@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const brands = [
   {
-    name: "Best writing",
+    name: "Best Writing",
     url: "/images/logos/bestwriting.svg",
     width: 117,
     height: 21,
@@ -24,7 +24,7 @@ const brands = [
     link: "https://pynions.com/",
   },
   {
-    name: "UIthings",
+    name: "UI Things",
     url: "/images/logos/uithings.svg",
     width: 136,
     height: 22,
@@ -66,7 +66,7 @@ export function Brands() {
                 alt={name}
                 width={width}
                 height={height}
-                className="opacity-50 transition-opacity duration-200 group-hover:opacity-100 w-auto h-auto"
+                className="opacity-95 transition-opacity duration-200 group-hover:opacity-100 w-auto h-auto"
               />
             </a>
           ))}
