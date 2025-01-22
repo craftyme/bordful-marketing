@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     creator: "@bordful",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
   manifest: "/site.webmanifest",
   metadataBase: new URL("https://bordful.com"),
