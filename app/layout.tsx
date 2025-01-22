@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   metadataBase: new URL("https://bordful.com"),
+  appleWebApp: {
+    title: "Bordful",
+  },
 };
 
 export default function RootLayout({
