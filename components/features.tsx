@@ -23,12 +23,12 @@ const features = [
       "Easy-to-use job posting system with customizable categories and search functionality.",
   },
   {
-    title: "User Management",
+    title: "Fully Open Source",
     description:
-      "Built-in authentication and user management for both employers and job seekers.",
+      "100% open source and free for both personal and commercial projects.",
   },
   {
-    title: "SEO Optimized",
+    title: "SEO Friendly",
     description:
       "Search engine optimized structure to help your job listings rank better.",
   },
