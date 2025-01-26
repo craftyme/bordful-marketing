@@ -30,13 +30,13 @@ const plans: Plan[] = [
     description: "For developers and hobbyists",
     features: [
       "Next.js codebase",
-      "Basic job board features",
+      "Full job board features",
       "Self-hosted solution",
       "MIT license",
       "Community support",
     ],
     cta: "Clone Now",
-    href: "https://github.com/tomaslau/bordful",
+    href: "https://github.com/craftled/bordful",
     external: true,
   },
   {
@@ -51,7 +51,7 @@ const plans: Plan[] = [
       "Email support",
     ],
     cta: "Order Setup",
-    href: "mailto:business@bordful.com?subject=Bordful%20custom%20installation&body=Hi%2C%20I%27m%20interested%20in%20building%20a%20job%20board.%20Here%20are%20more%20details%3A%20",
+    href: "https://buy.stripe.com/bIY5mJdyAdYc1pKdRe",
     highlight: true,
   },
 ];
@@ -121,8 +121,8 @@ const PricingHeader = React.memo(function PricingHeader() {
         Pricing
       </h2>
       <p className="mx-auto mt-3 max-w-[600px] text-sm text-muted-foreground text-balance">
-        Choose between our open source version or let us handle the complete
-        setup with our custom installation service.
+        Bordful is open source and free to use commercially. Need help getting
+        started? We offer custom setup services for a one-time fee.
       </p>
     </div>
   );
@@ -137,7 +137,7 @@ const PricingContent = React.memo(function PricingContent() {
         ))}
       </div>
       <div className="mt-8 text-center text-xs text-muted-foreground">
-        <p>All payments are processed & secured by Stripe.</p>
+        <p>Payments are processed & secured by Stripe.</p>
         <p className="mt-1">Price in USD. VAT may apply.</p>
       </div>
     </>

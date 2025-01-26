@@ -13,7 +13,7 @@ const FAQ_ITEMS = {
     {
       question: "What do I get with Bordful?",
       answer:
-        "A complete job board solution powered by Airtable. Modern, responsive website with job listings, search functionality, and easy job submissions - all without coding.",
+        "A complete job board solution powered by Next.js (frontend) and Airtable (backend). Modern, responsive website with job listings, individual job pages, filters, and search functionality.",
     },
     {
       question: "How often is Bordful updated?",
@@ -30,7 +30,7 @@ const FAQ_ITEMS = {
     {
       question: "Can I customize the design?",
       answer:
-        "Yes! Built with Tailwind CSS and Next.js, you can easily customize colors, typography, and layout through configuration files.",
+        "Yes! Built with Tailwind CSS and Next.js, you can customize colors, typography, and layout through configuration files. If you're comfortable with code, you can fully customize the functionality and design.",
     },
     {
       question: "How do I deploy my job board?",
@@ -42,7 +42,7 @@ const FAQ_ITEMS = {
     {
       question: "Is Bordful really free?",
       answer:
-        "Yes, completely open source and free. You only pay for hosting (e.g., Vercel) and Airtable if you exceed their free tier limits.",
+        "Yes, completely open source and free for personal and commercial use. You only pay for hosting (e.g., Vercel, Netlify, Cloudflare) and Airtable if you exceed their free tier limits.",
     },
     {
       question: "Can I charge for job postings?",
@@ -53,20 +53,41 @@ const FAQ_ITEMS = {
   LICENSE: [
     {
       question: "What license does Bordful use?",
-      answer:
-        "MIT license - free for both personal and commercial projects. You can modify and distribute the code as needed.",
+      answer: (
+        <>
+          <a
+            href="https://opensource.org/license/mit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            MIT license
+          </a>{" "}
+          - free for both personal and commercial projects. You can modify and
+          distribute the code as needed.
+        </>
+      ),
     },
     {
       question: "Do I need to credit Bordful?",
-      answer:
-        "While not required by the MIT license, we appreciate attribution. You can keep or remove the 'Powered by Bordful' footer link.",
+      answer: (
+        <>
+          While not required by the MIT license, we appreciate attribution. If
+          you use Bordful for your job board, reach out and we&apos;ll feature
+          you on the{" "}
+          <a href="/showcase" className="text-primary hover:underline">
+            showcase
+          </a>{" "}
+          page.
+        </>
+      ),
     },
   ],
 } as const;
 
 interface QuestionItemProps {
   question: string;
-  answer: string;
+  answer: string | React.ReactNode;
   isOpen: boolean;
   onToggle: () => void;
 }
