@@ -70,12 +70,23 @@ export default async function BlogPost({
                 headerClassName="space-y-6"
               >
                 <div className="text-xs text-muted-foreground">
-                  By {post.author} •{" "}
+                  By {post.author} • Published{" "}
                   {new Date(post.date).toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
                     year: "numeric",
                   })}
+                  {post.updatedDate && post.updatedDate !== post.date && (
+                    <>
+                      {" "}
+                      • Updated{" "}
+                      {new Date(post.updatedDate).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </>
+                  )}
                 </div>
               </ArticleLayout>
 

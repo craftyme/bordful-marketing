@@ -1,7 +1,8 @@
 ---
 title: "Introducing Bordful: Open Source Job Board Software"
-description: "Learn how Bordful makes it easy to launch your own job board without coding knowledge using Airtable as a backend."
+description: "Learn how Bordful makes it easy to launch your own job board with or without coding knowledge using Airtable as a backend."
 date: "2025-01-10"
+updatedDate: "2025-01-26"
 author: "Tomas Laurinavicius"
 ---
 

@@ -38,7 +38,7 @@ export function ArticleLayout({
           <h1 className="mb-3 text-2xl font-medium tracking-tight sm:text-3xl">
             {title}
           </h1>
-          <p className="mb-2 text-sm text-muted-foreground text-balance max-w-[750px]">
+          <p className="mb-2 text-sm text-muted-foreground max-w-[750px]">
             {description}
           </p>
           {date && (

@@ -9,6 +9,7 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  updatedDate?: string;
   author: string;
   content: string;
 }
