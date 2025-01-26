@@ -17,9 +17,10 @@ const HeroContent = React.memo(function HeroContent() {
             Launch Your Job Board{" "}
             <span className="text-muted-foreground">in Minutes</span>
           </h1>
-          <p className="text-base text-muted-foreground text-balance max-w-[600px]">
+          <p className="text-base text-muted-foreground max-w-[600px]">
             Open source job board starter template built with Next.js and
-            Airtable. Clone, customize and deploy your own job board in minutes.
+            Airtable.
+            <br /> Clone, customize and deploy your own job board in minutes.
           </p>
           <div className="flex items-center gap-3">
             <CustomLink
