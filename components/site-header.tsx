@@ -15,16 +15,16 @@ export function SiteHeader() {
         <div className="flex h-14 items-center justify-between rounded-full border border-border bg-background/60 backdrop-blur-md backdrop-saturate-150 px-4 sm:px-6">
           <div className="flex items-center gap-4 sm:gap-6">
             <SiteLogo />
-            <NavLinks />
+            <div className="hidden lg:flex">
+              <NavLinks />
+            </div>
           </div>
           <div className="flex items-center gap-2 sm:gap-4">
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex gap-6">
               <SocialIcons />
-            </div>
-            <ThemeSwitcher />
-            <div className="hidden lg:block">
               <ActionButtons />
             </div>
+            <ThemeSwitcher />
             <div className="lg:hidden">
               <MobileNav />
             </div>

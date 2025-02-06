@@ -4,7 +4,7 @@ import { UseCasesNav } from "./use-cases-nav";
 
 export function NavLinks() {
   return (
-    <nav className="flex items-center gap-6">
+    <nav className="flex items-center gap-4 md:gap-6 whitespace-nowrap overflow-x-auto px-2">
       {navConfig.mainNav.map((item) => {
         if (item.label === "Use Cases") {
           return <UseCasesNav key={item.href} />;
@@ -13,7 +13,7 @@ export function NavLinks() {
           <CustomLink
             key={item.href}
             href={item.href}
-            className="text-[13px] text-muted-foreground hover:text-foreground"
+            className="text-[13px] md:text-[14px] text-muted-foreground hover:text-foreground flex-shrink-0 transition-colors"
           >
             {item.label}
           </CustomLink>
