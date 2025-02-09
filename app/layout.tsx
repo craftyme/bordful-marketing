@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/constants";
+import Script from "next/script";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -58,6 +59,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          defer
+          src="https://umami.craftled.com/script.js"
+          data-website-id="206cabf2-10e7-489c-8766-2f4f875f678e"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className={`${geist.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
