@@ -26,10 +26,10 @@ interface ShowcaseItem {
 
 const showcaseItems: ShowcaseItem[] = [
   {
-    title: "GrowthJobs.org",
+    title: "Growth Jobs",
     description:
-      "The leading job board for growth marketing roles. Find or post jobs in growth, marketing, and digital marketing.",
-    href: "https://growth.demo.bordful.com",
+      "Growth Jobs is a specialized job board connecting growth-driven professionals with scaling companies.",
+    href: "https://growthjobs.org",
     category: CATEGORIES.ROLE,
     jobs: [
       {
