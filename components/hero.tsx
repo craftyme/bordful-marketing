@@ -14,8 +14,8 @@ const HeroContent = React.memo(function HeroContent() {
             Open Source Job Board Software
           </Badge>
           <h1 className="text-3xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-            Launch Your Job Board{" "}
-            <span className="text-muted-foreground">in Minutes</span>
+            Build and Launch Your Job Board{" "}
+            <span className="text-muted-foreground">This Weekend</span>
           </h1>
           <p className="text-base text-muted-foreground max-w-[600px]">
             Open source job board starter template built with Next.js and
