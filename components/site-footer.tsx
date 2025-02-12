@@ -22,7 +22,6 @@ const footerSections: FooterSection[] = [
       { href: "/features", label: "Features" },
       { href: "/pricing", label: "Pricing" },
       { href: "/docs/integrations", label: "Integrations" },
-
       { href: "https://demo.bordful.com/changelog", label: "Changelog" },
     ],
   },
@@ -31,6 +30,7 @@ const footerSections: FooterSection[] = [
     links: [
       { href: "/showcase", label: "Showcase" },
       { href: "/docs", label: "Documentation" },
+      { href: "/sitemap.xml", label: "Sitemap" },
       { href: "/style-guide", label: "Style Guide" },
       { href: "/use-cases", label: "Use Cases" },
       { href: "/blog", label: "Blog" },
