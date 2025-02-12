@@ -8,6 +8,7 @@ export const siteConfig = {
     twitter: "https://twitter.com/bordful",
     linkedin: "https://linkedin.com/company/bordful",
     bluesky: "https://bsky.app/profile/bordful.com",
+    reddit: "https://www.reddit.com/r/bordful/",
   },
 } as const;
 

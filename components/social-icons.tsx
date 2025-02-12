@@ -23,6 +23,11 @@ const socialLinks = [
     icon: "/images/logos/github.svg",
     label: "GitHub",
   },
+  {
+    href: siteConfig.links.reddit,
+    icon: "/images/logos/reddit.svg",
+    label: "Reddit",
+  },
 ] as const;
 
 export function SocialIcons() {
