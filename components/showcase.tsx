@@ -52,7 +52,7 @@ const showcaseItems: ShowcaseItem[] = [
   {
     title: "YouStartups",
     description:
-      "The go-to job board for innovators ready to build the future. We connect bold talent with startups.",
+      "The go-to job board for innovators ready to build the future. We connect bold talent with startups and scale-ups.",
     href: "https://youstartups.com",
     category: CATEGORIES.COUNTRY,
     jobs: [
