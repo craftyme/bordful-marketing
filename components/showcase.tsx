@@ -74,11 +74,11 @@ const showcaseItems: ShowcaseItem[] = [
     ],
   },
   {
-    title: "RemoteML",
+    title: "AI/ML Career",
     description:
-      "Remote jobs in machine learning, AI, and data science. Connect with leading companies in the AI space.",
-    href: "https://ml.demo.bordful.com",
-    category: CATEGORIES.REMOTE,
+      "Jobs in machine learning, AI, and data science. Connect with leading companies in the AI space.",
+    href: "https://aimlcareer.com",
+    category: CATEGORIES.INDUSTRY,
     jobs: [
       {
         role: "ML Engineer",
