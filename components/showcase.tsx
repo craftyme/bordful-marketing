@@ -50,26 +50,26 @@ const showcaseItems: ShowcaseItem[] = [
     ],
   },
   {
-    title: "TechJobs Spain",
+    title: "YouStartups",
     description:
-      "The largest tech job board in Spain. Find software development, design, and tech roles across Spanish cities.",
-    href: "https://spain.demo.bordful.com",
+      "The go-to job board for innovators ready to build the future. We connect bold talent with startups.",
+    href: "https://youstartups.com",
     category: CATEGORIES.COUNTRY,
     jobs: [
       {
-        role: "Frontend Developer",
+        role: "Founder's Associate",
         company: "SpainTech",
         location: "Madrid",
       },
       {
-        role: "UX Designer",
+        role: "Co-Founder in Residence",
         company: "DesignStudio",
-        location: "Barcelona",
+        location: "London",
       },
       {
-        role: "Full Stack Developer",
+        role: "Advisor/Prospective Co-Founder",
         company: "CodeLab",
-        location: "Valencia",
+        location: "New York",
       },
     ],
   },
