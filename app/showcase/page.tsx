@@ -21,6 +21,7 @@ export default function ShowcasePage() {
               <SectionHeader
                 title="Showcase"
                 description="Discover successful job boards powered by Bordful. From niche industry boards to regional platforms, see how others are using our template."
+                headingLevel="h1"
               />
             </div>
             <div className="mt-16">

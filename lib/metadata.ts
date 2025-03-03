@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import { siteConfig } from './constants';
 
 /**
- * Creates metadata with canonical URL and Open Graph URL for any page
+ * Creates metadata with canonical URL, Open Graph URL, and hreflang tags for any page
  * 
  * @param path The path of the page (e.g., '/blog', '/features')
  * @param metadata Additional metadata to merge
- * @returns Metadata object with canonical URL and Open Graph URL
+ * @returns Metadata object with canonical URL, Open Graph URL, and hreflang tags
  */
 export function createMetadata(path: string, metadata: Partial<Metadata> = {}): Metadata {
   // Ensure path starts with a slash
@@ -28,6 +28,10 @@ export function createMetadata(path: string, metadata: Partial<Metadata> = {}): 
     alternates: {
       ...metadata.alternates,
       canonical: canonicalPath,
+      languages: {
+        'en-US': fullUrl,
+        'x-default': fullUrl,
+      },
     },
     openGraph: {
       ...metadata.openGraph,

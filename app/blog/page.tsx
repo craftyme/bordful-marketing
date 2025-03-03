@@ -26,6 +26,7 @@ export default function BlogPage() {
               <SectionHeader
                 title="Blog"
                 description="Latest updates, guides, and tips for building successful job boards with Bordful."
+                headingLevel="h1"
               />
             </div>
 

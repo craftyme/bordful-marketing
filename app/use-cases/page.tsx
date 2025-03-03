@@ -21,6 +21,7 @@ export default function UseCasesPage() {
             <SectionHeader
               title="Use Cases"
               description="Discover how you can launch your own specialized job board. Whether it's location-based, industry-focused, or role-specific, Bordful helps you create the perfect platform."
+              headingLevel="h1"
             />
           </header>
           <UseCases variant="standalone" className="mt-16" />
