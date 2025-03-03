@@ -33,12 +33,28 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: '/images/bordful-job-board-software.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bordful - Open Source Job Board Software',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     creator: "@bordful",
+    images: [
+      {
+        url: '/images/bordful-job-board-software.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bordful - Open Source Job Board Software',
+      },
+    ],
   },
   icons: {
     icon: "/icon.png",
