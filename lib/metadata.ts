@@ -23,6 +23,7 @@ export function createMetadata(path: string, metadata: Partial<Metadata> = {}): 
     },
     openGraph: {
       ...metadata.openGraph,
+      type: "website",
       url: fullUrl,
     },
   };
