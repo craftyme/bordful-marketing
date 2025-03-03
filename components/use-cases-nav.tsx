@@ -46,7 +46,7 @@ export function UseCasesNav() {
       <DropdownMenuTrigger asChild>
         <button
           className={cn(
-            "inline-flex items-center gap-1 text-[13px] md:text-[14px] text-muted-foreground hover:text-foreground focus:outline-none transition-colors",
+            "inline-flex items-center gap-1 text-[13px] md:text-[14px] text-muted-foreground hover:text-foreground focus:outline-none transition-colors cursor-pointer",
             open && "text-foreground"
           )}
           onMouseEnter={() => setOpen(true)}
@@ -61,8 +61,8 @@ export function UseCasesNav() {
         onMouseLeave={() => setOpen(false)}
       >
         {USE_CASES.map((item) => (
-          <DropdownMenuItem key={item.href} asChild className="justify-start">
-            <CustomLink href={item.href} className="w-full text-[13px]">
+          <DropdownMenuItem key={item.href} asChild className="justify-start cursor-pointer">
+            <CustomLink href={item.href} className="w-full text-[13px] md:text-[14px] text-muted-foreground hover:text-foreground">
               {item.label}
             </CustomLink>
           </DropdownMenuItem>
