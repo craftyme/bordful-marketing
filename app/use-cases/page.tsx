@@ -1,10 +1,9 @@
-import { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { UseCases } from "@/components/use-cases";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata('/use-cases', {
   title: "Use Cases - Bordful",

@@ -1,13 +1,11 @@
-import { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { ArticleLayout } from "@/components/article-layout";
 import { Documentation } from "@/components/documentation";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata('/docs', {
   title: "Documentation - Bordful",
-  description:
-    "Learn how to set up, customize, and manage your job board with our comprehensive documentation.",
+  description: "Learn how to use Bordful to build your own job board. Installation guides, API reference, and more.",
 });
 
 export default function DocsPage() {

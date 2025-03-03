@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { TableOfContents } from "@/components/table-of-contents";
 import { ArticleLayout } from "@/components/article-layout";
 import { extractHeadings } from "@/lib/mdx";
-import { Metadata } from "next";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata('/docs/integrations', {
