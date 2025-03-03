@@ -10,8 +10,35 @@ const nextConfig: NextConfig = {
   // Enable React strict mode for better development
   reactStrictMode: true,
 
-  // Optimize production builds
-  swcMinify: true,
+  // Add experimental features from Next.js 15.2
+  experimental: {
+    // Enable View Transitions API (experimental)
+    // viewTransition: true,
+    
+    // Uncomment to enable Node.js Middleware (experimental, requires next@canary)
+    // nodeMiddleware: true,
+    
+    // Configure Turbopack
+    turbo: {
+      // Configure Turbopack rules if needed
+      // rules: {
+      //   '*.svg': {
+      //     loaders: ['@svgr/webpack'],
+      //     as: '*.js',
+      //   },
+      // },
+      
+      // Configure resolve extensions if needed
+      // resolveExtensions: [
+      //   '.tsx',
+      //   '.ts',
+      //   '.jsx',
+      //   '.js',
+      //   '.mjs',
+      //   '.json',
+      // ],
+    },
+  },
 
   // Configure headers for security
   async headers() {
@@ -42,37 +69,6 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
-  },
-
-  // Enable webpack optimization for production
-  webpack: (config, { dev, isServer }) => {
-    // Optimize CSS
-    if (!dev && !isServer) {
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          chunks: "all",
-          minSize: 20000,
-          maxSize: 244000,
-          minChunks: 1,
-          maxAsyncRequests: 30,
-          maxInitialRequests: 30,
-          cacheGroups: {
-            defaultVendors: {
-              test: /[\\/]node_modules[\\/]/,
-              priority: -10,
-              reuseExistingChunk: true,
-            },
-            default: {
-              minChunks: 2,
-              priority: -20,
-              reuseExistingChunk: true,
-            },
-          },
-        },
-      };
-    }
-    return config;
   },
 };
 
