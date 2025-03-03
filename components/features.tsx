@@ -42,9 +42,9 @@ const features = [
 const FeaturesHeader = React.memo(function FeaturesHeader() {
   return (
     <>
-      <h2 className="text-center text-2xl font-medium tracking-tight sm:text-3xl">
+      <h1 className="text-center text-2xl font-medium tracking-tight sm:text-3xl">
         Features
-      </h2>
+      </h1>
       <p className="mx-auto mt-4 max-w-[600px] text-center text-sm text-muted-foreground text-balance">
         Everything you need to run a successful job board. Built with modern
         technologies and best practices.
@@ -61,7 +61,7 @@ const FeaturesGrid = React.memo(function FeaturesGrid() {
           key={feature.title}
           className="rounded-lg border bg-background/50 p-5 backdrop-blur-sm transition-colors hover:bg-background/80"
         >
-          <h3 className="mb-1.5 text-sm font-medium">{feature.title}</h3>
+          <h2 className="mb-1.5 text-sm font-medium">{feature.title}</h2>
           <p className="text-sm text-muted-foreground">{feature.description}</p>
         </div>
       ))}

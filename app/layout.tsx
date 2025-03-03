@@ -52,6 +52,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    languages: {
+      'en-US': 'https://bordful.com',
+      'x-default': 'https://bordful.com',
+    },
   },
   robots: {
     index: true,
@@ -74,6 +78,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="alternate" hrefLang="en-US" href="https://bordful.com" />
+        <link rel="alternate" hrefLang="x-default" href="https://bordful.com" />
         <Script
           defer
           src="https://umami.craftled.com/script.js"
