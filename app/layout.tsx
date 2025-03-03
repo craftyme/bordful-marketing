@@ -37,7 +37,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://bordful.com",
     title: siteConfig.name + " - Open Source Job Board Software",
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -52,9 +51,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: siteConfig.name + " - Open Source Job Board Software",
     description: siteConfig.description,
     creator: "@bordful",
+    site: "@bordful",
     images: [
       {
         url: '/images/bordful-job-board-software.png',
@@ -75,7 +75,6 @@ export const metadata: Metadata = {
     title: "Bordful",
   },
   alternates: {
-    canonical: "/",
     languages: {
       'en-US': 'https://bordful.com',
       'x-default': 'https://bordful.com',
@@ -102,8 +101,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="alternate" hrefLang="en-US" href="https://bordful.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://bordful.com" />
         <Script
           defer
           src="https://umami.craftled.com/script.js"
