@@ -46,7 +46,7 @@ export function UseCasesNav() {
       <DropdownMenuTrigger asChild>
         <button
           className={cn(
-            "inline-flex items-center gap-1 text-[13px] text-muted-foreground hover:text-foreground focus:outline-none",
+            "inline-flex items-center gap-1 text-[13px] md:text-[14px] text-muted-foreground hover:text-foreground focus:outline-none transition-colors",
             open && "text-foreground"
           )}
           onMouseEnter={() => setOpen(true)}
