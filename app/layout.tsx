@@ -18,7 +18,15 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["job board", "next.js", "react", "typescript", "tailwindcss"],
+  keywords: [
+    "job board software",
+    "next.js",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "open source",
+    "airtable",
+  ],
   authors: [
     {
       name: "Tomas Laurinavicius",
@@ -30,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://bordful.com",
-    title: siteConfig.name,
+    title: siteConfig.name + " - Open Source Job Board Software",
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
