@@ -20,6 +20,7 @@ export default function PricingPage() {
             <SectionHeader
               title="Simple Pricing"
               description="Bordful is open source and free to use commercially. Need help getting started? We offer custom setup services for a one-time fee."
+              headingLevel="h1"
             />
             <div className="mt-16">
               <Pricing variant="standalone" />

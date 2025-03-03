@@ -20,6 +20,7 @@ export default function HelpPage() {
             <SectionHeader
               title="Help Center"
               description="Find answers to common questions, troubleshooting guides, and support resources to help you get the most out of Bordful."
+              headingLevel="h1"
             />
             <div className="mt-16">
               <HelpCenter />

@@ -15,6 +15,14 @@ export function createMetadata(path: string, metadata: Partial<Metadata> = {}): 
   // Create the full URL by combining the site URL with the path
   const fullUrl = `${siteConfig.links.home}${canonicalPath === '/' ? '' : canonicalPath}`;
   
+  // Default Open Graph image
+  const defaultOgImage = {
+    url: '/images/bordful-job-board-software.png',
+    width: 1200,
+    height: 630,
+    alt: 'Bordful - Open Source Job Board Software',
+  };
+  
   return {
     ...metadata,
     alternates: {
@@ -25,6 +33,7 @@ export function createMetadata(path: string, metadata: Partial<Metadata> = {}): 
       ...metadata.openGraph,
       type: "website",
       url: fullUrl,
+      images: metadata.openGraph?.images || [defaultOgImage],
     },
   };
 }
