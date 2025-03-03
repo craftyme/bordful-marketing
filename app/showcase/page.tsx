@@ -4,12 +4,13 @@ import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Showcase } from "@/components/showcase";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/showcase', {
   title: "Showcase - Bordful",
   description:
     "Discover successful job boards powered by Bordful. From niche industry boards to regional platforms, see how others are using our template.",
-};
+});
 
 export default function ShowcasePage() {
   return (

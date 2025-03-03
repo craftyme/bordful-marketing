@@ -4,12 +4,13 @@ import { Container } from "@/components/ui/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { HelpCenter } from "@/components/help-center";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/help', {
   title: "Help Center - Bordful",
   description:
     "Get help with Bordful. Find answers to common questions, troubleshooting guides, and support resources.",
-};
+});
 
 export default function HelpPage() {
   return (

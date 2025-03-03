@@ -3,6 +3,13 @@ import { notFound } from "next/navigation";
 import { TableOfContents } from "@/components/table-of-contents";
 import { ArticleLayout } from "@/components/article-layout";
 import { extractHeadings } from "@/lib/mdx";
+import { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
+
+export const metadata = createMetadata('/docs/integrations', {
+  title: "Integrations - Bordful Documentation",
+  description: "Learn how to integrate Bordful with other services and platforms.",
+});
 
 export default async function IntegrationsPage() {
   const doc = getDocBySlug("integrations/index");

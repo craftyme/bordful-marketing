@@ -4,12 +4,13 @@ import { Container } from "@/components/ui/container";
 import { Pricing } from "@/components/pricing";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { SectionHeader } from "@/components/ui/section-header";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/pricing', {
   title: "Pricing - Bordful",
   description:
     "Simple pricing for your job board. Bordful is open source and free to use commercially. Custom setup service available for a one-time fee.",
-};
+});
 
 export default function PricingPage() {
   return (

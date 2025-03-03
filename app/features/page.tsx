@@ -3,12 +3,13 @@ import { Features } from "@/components/features";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/features', {
   title: "Features - Bordful",
   description:
     "Everything you need to run a successful job board. Built with modern technologies and best practices.",
-};
+});
 
 export default function FeaturesPage() {
   return (
