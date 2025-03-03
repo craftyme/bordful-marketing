@@ -1,11 +1,11 @@
-import { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { UseCasePage } from "@/components/use-case-page";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/use-cases/country', {
   title: "Country-Specific Job Boards - Bordful",
   description:
     "Launch a country-specific job board with localized features, language support, and regional job categories. Connect local talent with opportunities in your target country.",
-};
+});
 
 const metrics = [
   {

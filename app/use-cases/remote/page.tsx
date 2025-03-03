@@ -1,11 +1,10 @@
-import { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { UseCasePage } from "@/components/use-case-page";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/use-cases/remote', {
   title: "Remote Job Boards - Bordful",
-  description:
-    "Launch a remote job board with specialized features for distributed teams. Connect remote talent with location-independent opportunities worldwide.",
-};
+  description: "Build a remote work job board that connects distributed teams with global talent. Perfect for the future of work.",
+});
 
 const metrics = [
   {

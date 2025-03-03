@@ -1,13 +1,12 @@
-import { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { CustomLink } from "@/components/ui/link";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/style-guide', {
   title: "Style Guide - Bordful",
-  description:
-    "A comprehensive guide to Bordful's design system, components, and patterns.",
-};
+  description: "A comprehensive guide to Bordful's design system, components, and patterns.",
+});
 
 export default function StyleGuidePage() {
   return (

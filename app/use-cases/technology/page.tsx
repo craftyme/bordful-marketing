@@ -1,11 +1,10 @@
-import { Metadata } from "next";
+import { createMetadata } from "@/lib/metadata";
 import { UseCasePage } from "@/components/use-case-page";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata('/use-cases/technology', {
   title: "Technology-Specific Job Boards - Bordful",
-  description:
-    "Launch a technology-specific job board with specialized features for your tech stack. Connect developers and tech professionals with targeted opportunities.",
-};
+  description: "Create a specialized job board for specific technologies or tech stacks. Connect tech talent with employers seeking specific technical expertise.",
+});
 
 const metrics = [
   {

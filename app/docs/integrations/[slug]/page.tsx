@@ -3,6 +3,25 @@ import { notFound } from "next/navigation";
 import { TableOfContents } from "@/components/table-of-contents";
 import { ArticleLayout } from "@/components/article-layout";
 import { extractHeadings } from "@/lib/mdx";
+import { createMetadata } from "@/lib/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const doc = getDocBySlug(`integrations/${resolvedParams.slug}`);
+
+  if (!doc) {
+    return {};
+  }
+
+  return createMetadata(`/docs/integrations/${resolvedParams.slug}`, {
+    title: `${doc.title} - Bordful Documentation`,
+    description: doc.description,
+  });
+}
 
 export default async function IntegrationPage({
   params,

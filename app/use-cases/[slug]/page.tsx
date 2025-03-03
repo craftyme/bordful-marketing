@@ -1,8 +1,8 @@
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { USE_CASES } from "@/lib/use-cases";
 import { UseCasePage as UseCasePageComponent } from "@/components/use-case-page";
 import Script from "next/script";
+import { createMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return Object.keys(USE_CASES).map((slug) => ({
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}) {
   const resolvedParams = await params;
   const useCase = USE_CASES[resolvedParams.slug];
 
@@ -22,7 +22,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return {
+  return createMetadata(`/use-cases/${resolvedParams.slug}`, {
     title: useCase.seo.title,
     description: useCase.seo.description,
     keywords: useCase.seo.keywords,
@@ -36,7 +36,7 @@ export async function generateMetadata({
       title: useCase.seo.title,
       description: useCase.seo.description,
     },
-  };
+  });
 }
 
 export default async function UseCasePage({

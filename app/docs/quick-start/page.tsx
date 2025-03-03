@@ -4,6 +4,12 @@ import { TableOfContents } from "@/components/table-of-contents";
 import { ArticleLayout } from "@/components/article-layout";
 import { extractHeadings } from "@/lib/mdx";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
+
+export const metadata = createMetadata('/docs/quick-start', {
+  title: "Quick Start Guide - Bordful Documentation",
+  description: "Get started with Bordful quickly. Learn how to install, configure, and launch your job board in minutes.",
+});
 
 export default async function QuickStartPage() {
   const doc = getDocBySlug("quick-start");
