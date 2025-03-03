@@ -42,9 +42,9 @@ const features = [
 const FeaturesHeader = React.memo(function FeaturesHeader() {
   return (
     <>
-      <h1 className="text-center text-2xl font-medium tracking-tight sm:text-3xl">
+      <h2 className="text-center text-2xl font-medium tracking-tight sm:text-3xl">
         Features
-      </h1>
+      </h2>
       <p className="mx-auto mt-4 max-w-[600px] text-center text-sm text-muted-foreground text-balance">
         Everything you need to run a successful job board. Built with modern
         technologies and best practices.
