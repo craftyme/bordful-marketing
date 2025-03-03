@@ -6,6 +6,7 @@ import {
   CORE_BENEFITS,
   CORE_FAQS,
 } from "@/lib/features";
+import { createMetadata } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,7 +41,7 @@ export async function generateMetadata({
   const title = `${cityName} Job Board Software | Create a Local Job Site`;
   const description = `Launch your own ${cityName} job board website using Next.js and Airtable. Modern UI components, job search filters, and TypeScript support included.`;
 
-  return {
+  return createMetadata(`/use-cases/city/${resolvedParams.slug}`, {
     title,
     description,
     keywords: [
@@ -62,7 +63,7 @@ export async function generateMetadata({
       title,
       description,
     },
-  };
+  });
 }
 
 export default async function CityJobBoardPage({ params }: PageProps) {

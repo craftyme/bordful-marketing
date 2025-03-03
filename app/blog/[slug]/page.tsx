@@ -9,6 +9,7 @@ import { ArticleLayout } from "@/components/article-layout";
 import { TableOfContents } from "@/components/table-of-contents";
 import { extractHeadings } from "@/lib/mdx";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -26,10 +27,10 @@ export async function generateMetadata({
   const post = getPostBySlug(resolvedParams.slug);
   if (!post) return {};
 
-  return {
+  return createMetadata(`/blog/${resolvedParams.slug}`, {
     title: `${post.title} - Bordful Blog`,
     description: post.description,
-  };
+  });
 }
 
 export default async function BlogPost({

@@ -5,12 +5,13 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { BlogCard } from "@/components/blog";
 import { getAllPosts } from "@/lib/blog";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = createMetadata('/blog', {
   title: "Blog - Bordful",
   description:
     "Latest updates, guides, and tips for building successful job boards with Bordful.",
-};
+});
 
 export default function BlogPage() {
   const posts = getAllPosts();

@@ -50,6 +50,9 @@ export const metadata: Metadata = {
   appleWebApp: {
     title: "Bordful",
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
