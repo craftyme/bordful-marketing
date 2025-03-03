@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Bordful",
-  description: "A modern, open source, customizable job board template built with Next.js and Airtable.",
+  description: "Open source job board starter template built with Next.js and Airtable. Clone, customize and deploy your own job board in minutes.",
   links: {
     home: "https://bordful.com",
     demo: "https://demo.bordful.com",
