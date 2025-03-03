@@ -2,6 +2,12 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
+
+export const metadata = createMetadata("/terms", {
+  title: "Terms of Service - Bordful",
+  description: "Please read these terms carefully before using Bordful.",
+});
 
 export default function TermsPage() {
   return (

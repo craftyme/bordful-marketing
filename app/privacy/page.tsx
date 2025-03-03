@@ -2,6 +2,12 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
+import { createMetadata } from "@/lib/metadata";
+
+export const metadata = createMetadata("/privacy", {
+  title: "Privacy Policy - Bordful",
+  description: "How we handle your data and protect your privacy.",
+});
 
 export default function PrivacyPage() {
   return (
